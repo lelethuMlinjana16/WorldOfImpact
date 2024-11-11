@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "dgSpecHash": "nr/npzOWm72AIc0vin3f3GAq3z4/GvgrOxqyLUTg6FOLXZh4Gqs+57GSYxMHDUg1JITqZI+/2MpYmFNET1JoFw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\MankgashaMaenetja\\source\\repos\\WOI_TestSuite\\WOI_Testsuite\\WOI_Testsuite.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\MankgashaMaenetja\\.nuget\\packages\\coverlet.collector\\6.0.2\\coverlet.collector.6.0.2.nupkg.sha512",
+    "C:\\Users\\MankgashaMaenetja\\.nuget\\packages\\dotnetseleniumextras.waithelpers\\3.11.0\\dotnetseleniumextras.waithelpers.3.11.0.nupkg.sha512",
+    "C:\\Users\\MankgashaMaenetja\\.nuget\\packages\\microsoft.codecoverage\\17.11.1\\microsoft.codecoverage.17.11.1.nupkg.sha512",
+    "C:\\Users\\MankgashaMaenetja\\.nuget\\packages\\microsoft.net.test.sdk\\17.11.1\\microsoft.net.test.sdk.17.11.1.nupkg.sha512",
+    "C:\\Users\\MankgashaMaenetja\\.nuget\\packages\\microsoft.testplatform.objectmodel\\17.11.1\\microsoft.testplatform.objectmodel.17.11.1.nupkg.sha512",
+    "C:\\Users\\MankgashaMaenetja\\.nuget\\packages\\microsoft.testplatform.testhost\\17.11.1\\microsoft.testplatform.testhost.17.11.1.nupkg.sha512",
+    "C:\\Users\\MankgashaMaenetja\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\MankgashaMaenetja\\.nuget\\packages\\nunit\\4.2.2\\nunit.4.2.2.nupkg.sha512",
+    "C:\\Users\\MankgashaMaenetja\\.nuget\\packages\\nunit.analyzers\\4.3.0\\nunit.analyzers.4.3.0.nupkg.sha512",
+    "C:\\Users\\MankgashaMaenetja\\.nuget\\packages\\nunit3testadapter\\4.6.0\\nunit3testadapter.4.6.0.nupkg.sha512",
+    "C:\\Users\\MankgashaMaenetja\\.nuget\\packages\\selenium.chrome.webdriver\\85.0.0\\selenium.chrome.webdriver.85.0.0.nupkg.sha512",
+    "C:\\Users\\MankgashaMaenetja\\.nuget\\packages\\selenium.support\\4.26.1\\selenium.support.4.26.1.nupkg.sha512",
+    "C:\\Users\\MankgashaMaenetja\\.nuget\\packages\\selenium.webdriver\\4.26.1\\selenium.webdriver.4.26.1.nupkg.sha512",
+    "C:\\Users\\MankgashaMaenetja\\.nuget\\packages\\selenium.webdriver.chromedriver\\130.0.6723.11600\\selenium.webdriver.chromedriver.130.0.6723.11600.nupkg.sha512",
+    "C:\\Users\\MankgashaMaenetja\\.nuget\\packages\\system.reflection.metadata\\1.6.0\\system.reflection.metadata.1.6.0.nupkg.sha512"
+  ],
+  "logs": []
+}
