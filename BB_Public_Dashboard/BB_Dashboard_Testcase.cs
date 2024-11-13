@@ -22,7 +22,7 @@ namespace WOI_Testsuite.BB_Public_Dashboard
             public void startBrowser()
             {
 
-                _driver = base.SiteConnection();
+                SiteConnection();
             }
 
             [Test, Order(1)]
