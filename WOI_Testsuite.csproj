@@ -33,7 +33,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="HC_Public_Dashboard\" />
     <Folder Include="Crime_Public_Dashboard\" />
     <Folder Include="Organisation_Admin_Dashboard\" />
     <Folder Include="WOI_Admin_Dashboard\" />

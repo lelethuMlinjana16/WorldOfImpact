@@ -1,0 +1,87 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\User\\OneDrive - Digital Solution Foundry (Pty) Ltd\\Documents\\GitHub\\WorldOfImpact\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{432679F1-3BE5-476B-A3E6-936816625F87}|WOI_Testsuite.csproj|c:\\users\\user\\onedrive - digital solution foundry (pty) ltd\\documents\\github\\worldofimpact\\testbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{432679F1-3BE5-476B-A3E6-936816625F87}|WOI_Testsuite.csproj|solutionrelative:testbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{432679F1-3BE5-476B-A3E6-936816625F87}|WOI_Testsuite.csproj|c:\\users\\user\\onedrive - digital solution foundry (pty) ltd\\documents\\github\\worldofimpact\\hc_public_dashboard\\hc_dashboard_testcase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{432679F1-3BE5-476B-A3E6-936816625F87}|WOI_Testsuite.csproj|solutionrelative:hc_public_dashboard\\hc_dashboard_testcase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{432679F1-3BE5-476B-A3E6-936816625F87}|WOI_Testsuite.csproj|c:\\users\\user\\onedrive - digital solution foundry (pty) ltd\\documents\\github\\worldofimpact\\bb_public_dashboard\\bb_dashboard_testcase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{432679F1-3BE5-476B-A3E6-936816625F87}|WOI_Testsuite.csproj|solutionrelative:bb_public_dashboard\\bb_dashboard_testcase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HC_Dashboard_Testcase.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive - Digital Solution Foundry (Pty) Ltd\\Documents\\GitHub\\WorldOfImpact\\HC_Public_Dashboard\\HC_Dashboard_Testcase.cs",
+              "RelativeDocumentMoniker": "HC_Public_Dashboard\\HC_Dashboard_Testcase.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive - Digital Solution Foundry (Pty) Ltd\\Documents\\GitHub\\WorldOfImpact\\HC_Public_Dashboard\\HC_Dashboard_Testcase.cs",
+              "RelativeToolTip": "HC_Public_Dashboard\\HC_Dashboard_Testcase.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAD4v04AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-13T07:48:34.248Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TestBase.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive - Digital Solution Foundry (Pty) Ltd\\Documents\\GitHub\\WorldOfImpact\\TestBase.cs",
+              "RelativeDocumentMoniker": "TestBase.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive - Digital Solution Foundry (Pty) Ltd\\Documents\\GitHub\\WorldOfImpact\\TestBase.cs",
+              "RelativeToolTip": "TestBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T10:32:18.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BB_Dashboard_Testcase.cs",
+              "DocumentMoniker": "C:\\Users\\User\\OneDrive - Digital Solution Foundry (Pty) Ltd\\Documents\\GitHub\\WorldOfImpact\\BB_Public_Dashboard\\BB_Dashboard_Testcase.cs",
+              "RelativeDocumentMoniker": "BB_Public_Dashboard\\BB_Dashboard_Testcase.cs",
+              "ToolTip": "C:\\Users\\User\\OneDrive - Digital Solution Foundry (Pty) Ltd\\Documents\\GitHub\\WorldOfImpact\\BB_Public_Dashboard\\BB_Dashboard_Testcase.cs",
+              "RelativeToolTip": "BB_Public_Dashboard\\BB_Dashboard_Testcase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T10:28:00.026Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
