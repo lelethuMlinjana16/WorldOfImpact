@@ -1,0 +1,149 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\MankgashaMaenetja\\source\\repos\\WOI_TestSuite\\WOI_Testsuite\\WorldOfImpact\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{432679F1-3BE5-476B-A3E6-936816625F87}|WOI_Testsuite.csproj|c:\\users\\mankgashamaenetja\\source\\repos\\woi_testsuite\\woi_testsuite\\worldofimpact\\bb_public_dashboard\\bb_dashboard_testcases.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{432679F1-3BE5-476B-A3E6-936816625F87}|WOI_Testsuite.csproj|solutionrelative:bb_public_dashboard\\bb_dashboard_testcases.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{432679F1-3BE5-476B-A3E6-936816625F87}|WOI_Testsuite.csproj|c:\\users\\mankgashamaenetja\\source\\repos\\woi_testsuite\\woi_testsuite\\worldofimpact\\bb_public_dashboard\\datacomparison.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{432679F1-3BE5-476B-A3E6-936816625F87}|WOI_Testsuite.csproj|solutionrelative:bb_public_dashboard\\datacomparison.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{432679F1-3BE5-476B-A3E6-936816625F87}|WOI_Testsuite.csproj|c:\\users\\mankgashamaenetja\\source\\repos\\woi_testsuite\\woi_testsuite\\worldofimpact\\hc_public_dashboard\\hc_dashboard_testcases.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{432679F1-3BE5-476B-A3E6-936816625F87}|WOI_Testsuite.csproj|solutionrelative:hc_public_dashboard\\hc_dashboard_testcases.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{432679F1-3BE5-476B-A3E6-936816625F87}|WOI_Testsuite.csproj|c:\\users\\mankgashamaenetja\\source\\repos\\woi_testsuite\\woi_testsuite\\worldofimpact\\bb_public_dashboard\\bbgridview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{432679F1-3BE5-476B-A3E6-936816625F87}|WOI_Testsuite.csproj|solutionrelative:bb_public_dashboard\\bbgridview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\MankgashaMaenetja\\AppData\\Local\\SourceServer\\afa0c87eb86fd23546212f9efa70f6532c675161e0bb9807b817a561ae093f20\\src\\libraries\\System.Private.CoreLib\\src\\System\\Reflection\\MethodBaseInvoker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{432679F1-3BE5-476B-A3E6-936816625F87}|WOI_Testsuite.csproj|c:\\users\\mankgashamaenetja\\source\\repos\\woi_testsuite\\woi_testsuite\\worldofimpact\\testbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{432679F1-3BE5-476B-A3E6-936816625F87}|WOI_Testsuite.csproj|solutionrelative:testbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{432679F1-3BE5-476B-A3E6-936816625F87}|WOI_Testsuite.csproj|c:\\users\\mankgashamaenetja\\source\\repos\\woi_testsuite\\woi_testsuite\\worldofimpact\\public_dashboard\\dashboard_testcase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{432679F1-3BE5-476B-A3E6-936816625F87}|WOI_Testsuite.csproj|solutionrelative:public_dashboard\\dashboard_testcase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DataComparison.cs",
+              "DocumentMoniker": "C:\\Users\\MankgashaMaenetja\\source\\repos\\WOI_TestSuite\\WOI_Testsuite\\WorldOfImpact\\BB_Public_Dashboard\\DataComparison.cs",
+              "RelativeDocumentMoniker": "BB_Public_Dashboard\\DataComparison.cs",
+              "ToolTip": "C:\\Users\\MankgashaMaenetja\\source\\repos\\WOI_TestSuite\\WOI_Testsuite\\WorldOfImpact\\BB_Public_Dashboard\\DataComparison.cs",
+              "RelativeToolTip": "BB_Public_Dashboard\\DataComparison.cs",
+              "ViewState": "AQIAAH8AAAAAAAAAAAAYwJ4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T10:58:33.775Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BB_Dashboard_Testcases.cs",
+              "DocumentMoniker": "C:\\Users\\MankgashaMaenetja\\source\\repos\\WOI_TestSuite\\WOI_Testsuite\\WorldOfImpact\\BB_Public_Dashboard\\BB_Dashboard_Testcases.cs",
+              "RelativeDocumentMoniker": "BB_Public_Dashboard\\BB_Dashboard_Testcases.cs",
+              "ToolTip": "C:\\Users\\MankgashaMaenetja\\source\\repos\\WOI_TestSuite\\WOI_Testsuite\\WorldOfImpact\\BB_Public_Dashboard\\BB_Dashboard_Testcases.cs",
+              "RelativeToolTip": "BB_Public_Dashboard\\BB_Dashboard_Testcases.cs",
+              "ViewState": "AQIAAA8BAAAAAAAAAAAAAB0BAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T06:51:38.246Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "BBGridView.cs",
+              "DocumentMoniker": "C:\\Users\\MankgashaMaenetja\\source\\repos\\WOI_TestSuite\\WOI_Testsuite\\WorldOfImpact\\BB_Public_Dashboard\\BBGridView.cs",
+              "RelativeDocumentMoniker": "BB_Public_Dashboard\\BBGridView.cs",
+              "ToolTip": "C:\\Users\\MankgashaMaenetja\\source\\repos\\WOI_TestSuite\\WOI_Testsuite\\WorldOfImpact\\BB_Public_Dashboard\\BBGridView.cs",
+              "RelativeToolTip": "BB_Public_Dashboard\\BBGridView.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAwwFIBAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T14:46:02.363Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HC_Dashboard_Testcases.cs",
+              "DocumentMoniker": "C:\\Users\\MankgashaMaenetja\\source\\repos\\WOI_TestSuite\\WOI_Testsuite\\WorldOfImpact\\HC_Public_Dashboard\\HC_Dashboard_Testcases.cs",
+              "RelativeDocumentMoniker": "HC_Public_Dashboard\\HC_Dashboard_Testcases.cs",
+              "ToolTip": "C:\\Users\\MankgashaMaenetja\\source\\repos\\WOI_TestSuite\\WOI_Testsuite\\WorldOfImpact\\HC_Public_Dashboard\\HC_Dashboard_Testcases.cs",
+              "RelativeToolTip": "HC_Public_Dashboard\\HC_Dashboard_Testcases.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAuwCAAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T06:28:36.36Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MethodBaseInvoker.cs",
+              "DocumentMoniker": "C:\\Users\\MankgashaMaenetja\\AppData\\Local\\SourceServer\\afa0c87eb86fd23546212f9efa70f6532c675161e0bb9807b817a561ae093f20\\src\\libraries\\System.Private.CoreLib\\src\\System\\Reflection\\MethodBaseInvoker.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\AppData\\Local\\SourceServer\\afa0c87eb86fd23546212f9efa70f6532c675161e0bb9807b817a561ae093f20\\src\\libraries\\System.Private.CoreLib\\src\\System\\Reflection\\MethodBaseInvoker.cs",
+              "ToolTip": "C:\\Users\\MankgashaMaenetja\\AppData\\Local\\SourceServer\\afa0c87eb86fd23546212f9efa70f6532c675161e0bb9807b817a561ae093f20\\src\\libraries\\System.Private.CoreLib\\src\\System\\Reflection\\MethodBaseInvoker.cs [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\AppData\\Local\\SourceServer\\afa0c87eb86fd23546212f9efa70f6532c675161e0bb9807b817a561ae093f20\\src\\libraries\\System.Private.CoreLib\\src\\System\\Reflection\\MethodBaseInvoker.cs [Read Only]",
+              "ViewState": "AQIAADAAAAAAAAAAAAAgwDgAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T10:28:20.69Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Dashboard_Testcase.cs",
+              "DocumentMoniker": "C:\\Users\\MankgashaMaenetja\\source\\repos\\WOI_TestSuite\\WOI_Testsuite\\WorldOfImpact\\Public_Dashboard\\Dashboard_Testcase.cs",
+              "RelativeDocumentMoniker": "Public_Dashboard\\Dashboard_Testcase.cs",
+              "ToolTip": "C:\\Users\\MankgashaMaenetja\\source\\repos\\WOI_TestSuite\\WOI_Testsuite\\WorldOfImpact\\Public_Dashboard\\Dashboard_Testcase.cs",
+              "RelativeToolTip": "Public_Dashboard\\Dashboard_Testcase.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAADwvzkAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T08:50:58.428Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TestBase.cs",
+              "DocumentMoniker": "C:\\Users\\MankgashaMaenetja\\source\\repos\\WOI_TestSuite\\WOI_Testsuite\\WorldOfImpact\\TestBase.cs",
+              "RelativeDocumentMoniker": "TestBase.cs",
+              "ToolTip": "C:\\Users\\MankgashaMaenetja\\source\\repos\\WOI_TestSuite\\WOI_Testsuite\\WorldOfImpact\\TestBase.cs",
+              "RelativeToolTip": "TestBase.cs",
+              "ViewState": "AQIAAD4AAAAAAAAAAAAAADYAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T08:49:27.062Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
