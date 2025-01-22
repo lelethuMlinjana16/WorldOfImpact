@@ -302,8 +302,10 @@ namespace WOI_Testsuite
                 Console.WriteLine("Overlay did not disappear within the wait time.");
             }
 
-            // The Chart View
+            Thread.Sleep(2000); // Delay for 2 seconds
 
+            // The Chart View
+        
             // Click on the first element in the dashboard using JavaScript click as a fallback
             IWebElement firstElementToClick = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("/html/body/div/div[2]/header/div[3]/nav/ul/li[2]/a")));
             try
@@ -315,6 +317,7 @@ namespace WOI_Testsuite
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", firstElementToClick);
             }
 
+            Thread.Sleep(2000); // Delay for 2 seconds
 
             // Click on the desired input element
             IWebElement inputElementToClick = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("/html/body/div/div[2]/div[1]/div[1]/ul/li[2]/label/input")));
@@ -326,6 +329,8 @@ namespace WOI_Testsuite
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", inputElementToClick);
             }
+
+            Thread.Sleep(2000); // Delay for 2 seconds
 
             // Optionally, add verification if needed
             Assert.That(inputElementToClick.Selected, Is.True, "The input element was not successfully selected.");
@@ -341,6 +346,7 @@ namespace WOI_Testsuite
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", specificLabel);
             }
 
+            Thread.Sleep(2000); // Delay for 2 seconds
 
 
             // Navigate to the desired element (Dropdown Button)
@@ -353,6 +359,8 @@ namespace WOI_Testsuite
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", specificElementToClick);
             }
+
+            Thread.Sleep(2000); // Delay for 2 seconds
 
             // Wait for the dropdown to be visible
             IWebElement dropdownMenu = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/header/div[3]/nav/ul/li[4]/div/button/div")));
@@ -367,6 +375,8 @@ namespace WOI_Testsuite
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", northernCapeOption);
             }
+
+            Thread.Sleep(2000); // Delay for 2 seconds
 
             // Verify the selection
             IWebElement selectedOption = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[text()='Northern Cape']"))); // Adjust the XPath to match the visible selected option.
@@ -384,6 +394,8 @@ namespace WOI_Testsuite
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", secondDropdownToClick);
             }
 
+            Thread.Sleep(2000); // Delay for 2 seconds
+
             // Wait for the dropdown to be visible
             IWebElement secondDropdownMenu = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/header/div[3]/nav/ul/li[5]/div/button/div")));
 
@@ -397,6 +409,8 @@ namespace WOI_Testsuite
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", secondDropdownOption);
             }
+
+            Thread.Sleep(2000); // Delay for 2 seconds
 
             // Verify the selection
             IWebElement secondSelectedOption = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[text()='Frances Baard']"))); // Replace 'Desired Option Text' with the actual option text
@@ -413,6 +427,8 @@ namespace WOI_Testsuite
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", thirdDropdownToClick);
             }
 
+            Thread.Sleep(2000); // Delay for 2 seconds
+
             // Wait for the dropdown to be visible
             IWebElement thirdDropdownMenu = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/header/div[3]/nav/ul/li[6]/div/button/div")));
 
@@ -426,6 +442,7 @@ namespace WOI_Testsuite
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", thirdDropdownOption);
             }
+            Thread.Sleep(2000); // Delay for 2 seconds
 
             // Verify the selection
             IWebElement thirdSelectedOption = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[text()='Sol Plaatje Local Municipality']"))); // Replace 'Desired Option Text' with the actual option text
