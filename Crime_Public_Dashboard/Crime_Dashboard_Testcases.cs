@@ -254,7 +254,45 @@ namespace WOI_Testsuite.Crime_Public_Dashboard
             Thread.Sleep(2000); // Delay for 2 seconds
 
             // Locate and click the specific element
-     
+            //*[@id="root"]/div[2]/div[2]/div/div[2]/div[3]/div[1]/div[2]/div/div[1]
+            IWebElement specificElementToClick = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//*[@id=\'root\']/div[2]/div[2]/div/div[2]/div[1]/div[1]/div[2]/div/div[2]")));
+            try
+            {
+                specificElementToClick.Click();
+            }
+            catch (ElementClickInterceptedException)
+            {
+                ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", specificElementToClick);
+            }
+
+            Thread.Sleep(2000); // Delay for 2 seconds
+
+            // Locate and click the specific element
+           
+            IWebElement specificElementToClick2 = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//*[@id=\"root\"]/div[2]/div[2]/div/div[2]/div[3]/div[1]/div[2]/div/div[1]")));
+            try
+            {
+                specificElementToClick2.Click();
+            }
+            catch (ElementClickInterceptedException)
+            {
+                ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", specificElementToClick2);
+            }
+
+            Thread.Sleep(2000); // Delay for 2 seconds
+
+            //Switch from Lowest to highest
+
+            IWebElement specificElementToClick3 = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath(" //*[@id=\"root\"]/div[2]/div[2]/div/button/span")));
+            try
+            {
+                specificElementToClick3.Click();
+            }
+            catch (ElementClickInterceptedException)
+            {
+                ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", specificElementToClick3);
+            }
+            Thread.Sleep(2000); // Delay for 2 seconds
             // Verify the element displayed after clicking
             IWebElement firstClickVerificationElement = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/div[1]/div[3]")));
             Assert.That(firstClickVerificationElement.Displayed, Is.True, "The expected element did not appear after the first click.");
