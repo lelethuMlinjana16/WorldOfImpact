@@ -366,21 +366,21 @@ namespace WOI_Testsuite
             IWebElement dropdownMenu = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/header/div[3]/nav/ul/li[4]/div/button/div")));
 
             // Select the "Northern Cape" option from the dropdown
-            IWebElement northernCapeOption = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//li[text()='Northern Cape']")));
+            IWebElement northWestOption = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//li[text()='North West']")));
             try
             {
-                northernCapeOption.Click();
+                northWestOption.Click();
             }
             catch (ElementClickInterceptedException)
             {
-                ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", northernCapeOption);
+                ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", northWestOption);
             }
 
             Thread.Sleep(2000); // Delay for 2 seconds
 
             // Verify the selection
-            IWebElement selectedOption = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[text()='Northern Cape']"))); // Adjust the XPath to match the visible selected option.
-            Assert.That(selectedOption.Displayed, Is.True, "Northern Cape was not successfully selected from the dropdown.");
+            IWebElement selectedOption = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[text()='North West']"))); // Adjust the XPath to match the visible selected option.
+            Assert.That(selectedOption.Displayed, Is.True, "North West was not successfully selected from the dropdown.");
 
 
             // Navigate to the desired element (Dropdown Button for the second dropdown)
@@ -400,7 +400,7 @@ namespace WOI_Testsuite
             IWebElement secondDropdownMenu = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/header/div[3]/nav/ul/li[5]/div/button/div")));
 
             // Select the desired option from the second dropdown (adjust the XPath for the specific option)
-            IWebElement secondDropdownOption = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//li[text()='Frances Baard']"))); // Replace 'Desired Option Text' with the actual option text
+            IWebElement secondDropdownOption = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//li[text()='Dr Ruth Segomotsi Mompati']"))); // Replace 'Desired Option Text' with the actual option text
             try
             {
                 secondDropdownOption.Click();
@@ -413,7 +413,7 @@ namespace WOI_Testsuite
             Thread.Sleep(2000); // Delay for 2 seconds
 
             // Verify the selection
-            IWebElement secondSelectedOption = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[text()='Frances Baard']"))); // Replace 'Desired Option Text' with the actual option text
+            IWebElement secondSelectedOption = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[text()='Dr Ruth Segomotsi Mompati']"))); // Replace 'Desired Option Text' with the actual option text
             Assert.That(secondSelectedOption.Displayed, Is.True, "The desired option was not successfully selected from the second dropdown.");
 
             // Navigate to the desired element (Dropdown Button for the third dropdown)
@@ -433,7 +433,7 @@ namespace WOI_Testsuite
             IWebElement thirdDropdownMenu = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/header/div[3]/nav/ul/li[6]/div/button/div")));
 
             // Select the desired option from the third dropdown (adjust the XPath for the specific option)
-            IWebElement thirdDropdownOption = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//li[text()='Sol Plaatje Local Municipality']"))); // Replace 'Desired Option Text' with the actual option text
+            IWebElement thirdDropdownOption = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//li[text()='Lekwa-Teemane Local Municipality']"))); // Replace 'Desired Option Text' with the actual option text
             try
             {
                 thirdDropdownOption.Click();
@@ -445,8 +445,11 @@ namespace WOI_Testsuite
             Thread.Sleep(2000); // Delay for 2 seconds
 
             // Verify the selection
-            IWebElement thirdSelectedOption = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[text()='Sol Plaatje Local Municipality']"))); // Replace 'Desired Option Text' with the actual option text
+            IWebElement thirdSelectedOption = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[text()='Lekwa-Teemane Local Municipality']"))); // Replace 'Desired Option Text' with the actual option text
             Assert.That(thirdSelectedOption.Displayed, Is.True, "The desired option was not successfully selected from the third dropdown.");
+
+
+            Thread.Sleep(2000); // Delay for 2 seconds
 
 
             // Verify the element displayed after clicking
@@ -528,19 +531,19 @@ namespace WOI_Testsuite
             IWebElement dropdownMenu = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/header/div[3]/nav/ul/li[4]/div/button/div")));
 
             // Select the "Northern Cape" option from the dropdown
-            IWebElement northernCapeOption = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//li[text()='Northern Cape']")));
+            IWebElement easternCapeOption = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//li[text()='Eastern Cape']")));
             try
             {
-                northernCapeOption.Click();
+                easternCapeOption.Click();
             }
             catch (ElementClickInterceptedException)
             {
-                ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", northernCapeOption);
+                ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", easternCapeOption);
             }
             Thread.Sleep(2000); // Delay for 2 seconds
             // Verify the selection
-            IWebElement selectedOption = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[text()='Northern Cape']"))); // Adjust the XPath to match the visible selected option.
-            Assert.That(selectedOption.Displayed, Is.True, "Northern Cape was not successfully selected from the dropdown.");
+            IWebElement selectedOption = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[text()='Eastern Cape']"))); // Adjust the XPath to match the visible selected option.
+            Assert.That(selectedOption.Displayed, Is.True, "Eastern Cape was not successfully selected from the dropdown.");
 
 
             // Navigate to the desired element (Dropdown Button for the second dropdown)
@@ -558,7 +561,7 @@ namespace WOI_Testsuite
             IWebElement secondDropdownMenu = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/header/div[3]/nav/ul/li[5]/div/button/div")));
 
             // Select the desired option from the second dropdown (adjust the XPath for the specific option)
-            IWebElement secondDropdownOption = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//li[text()='Frances Baard']"))); // Replace 'Desired Option Text' with the actual option text
+            IWebElement secondDropdownOption = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//li[text()='Amathole']"))); // Replace 'Desired Option Text' with the actual option text
             try
             {
                 secondDropdownOption.Click();
@@ -569,7 +572,7 @@ namespace WOI_Testsuite
             }
             Thread.Sleep(2000); // Delay for 2 seconds
             // Verify the selection
-            IWebElement secondSelectedOption = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[text()='Frances Baard']"))); // Replace 'Desired Option Text' with the actual option text
+            IWebElement secondSelectedOption = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[text()='Amathole']"))); // Replace 'Desired Option Text' with the actual option text
             Assert.That(secondSelectedOption.Displayed, Is.True, "The desired option was not successfully selected from the second dropdown.");
 
             // Navigate to the desired element (Dropdown Button for the third dropdown)
@@ -587,7 +590,7 @@ namespace WOI_Testsuite
             IWebElement thirdDropdownMenu = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/header/div[3]/nav/ul/li[6]/div/button/div")));
 
             // Select the desired option from the third dropdown (adjust the XPath for the specific option)
-            IWebElement thirdDropdownOption = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//li[text()='Sol Plaatje Local Municipality']"))); // Replace 'Desired Option Text' with the actual option text
+            IWebElement thirdDropdownOption = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//li[text()='Mnquma Local Municipality']"))); // Replace 'Desired Option Text' with the actual option text
             try
             {
                 thirdDropdownOption.Click();
@@ -598,7 +601,7 @@ namespace WOI_Testsuite
             }
             Thread.Sleep(2000); // Delay for 2 seconds
             // Verify the selection
-            IWebElement thirdSelectedOption = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[text()='Sol Plaatje Local Municipality']"))); // Replace 'Desired Option Text' with the actual option text
+            IWebElement thirdSelectedOption = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[text()='Mnquma Local Municipality']"))); // Replace 'Desired Option Text' with the actual option text
             Assert.That(thirdSelectedOption.Displayed, Is.True, "The desired option was not successfully selected from the third dropdown.");
 
             // Verify the element displayed after clicking
