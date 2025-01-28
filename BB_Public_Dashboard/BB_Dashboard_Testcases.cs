@@ -32,16 +32,40 @@ namespace WOI_Testsuite
         {
 
 
-            // Wait for the overlay to disappear if present
+             // Define the path to your Excel file and the sheet name
+    string filePath = @"C:\Users\MankgashaMaenetja\source\repos\WOI_TestSuite\WOI_Testsuite\WorldOfImpact\TestData\NC.xlsx"; // Update this with the actual path to your Excel file
+    string sheetName = "Containment Centers"; // Replace with the actual sheet name in your Excel file
+
+    // Call the ReadExcelData method to retrieve the data
+    DataTable excelData = ReadExcelData(filePath, sheetName);
+
+    // Example: Iterate through the rows and use the data in your test
+    Console.WriteLine("Data from Excel:");
+            foreach (DataRow row in excelData.Rows)
+            {
+                foreach (var item in row.ItemArray)
+                {
+                    Console.Write(item.ToString() + "\t");
+                }
+                Console.WriteLine();
+            }
+
+            // Example: Use data from the Excel sheet in your test
+            /*  string someValueFromExcel = excelData.Rows[0]["Contact Person"].ToString();*/ // Replace 'ColumnName' with the actual column name
+                                                                                              //Console.WriteLine($"Using value from Excel: {someValueFromExcel}");
+
+            // Proceed with the rest of your test logic
             try
-            {
-                _wait.Until(ExpectedConditions.InvisibilityOfElementLocated(By.ClassName("overlay")));
-            }
-            catch (WebDriverTimeoutException)
-            {
-                Console.WriteLine("Overlay did not disappear within the wait time.");
-            }
-            Thread.Sleep(2000); // Delay for 2 seconds
+    {
+        _wait.Until(ExpectedConditions.InvisibilityOfElementLocated(By.ClassName("overlay")));
+    }
+    catch (WebDriverTimeoutException)
+    {
+        Console.WriteLine("Overlay did not disappear within the wait time.");
+    }
+    Thread.Sleep(2000);
+
+         
             // The Map View
 
             // Click on the first element in the dashboard using JavaScript click as a fallback  
@@ -71,6 +95,7 @@ namespace WOI_Testsuite
             Assert.That(inputElementToClick.Selected, Is.True, "The input element was not successfully selected.");
 
             // Locate and click the specific element
+
             IWebElement specificLabel = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("/html/body/div/div[2]/div[1]/div[1]/ul/li[2]/ul/li[4]/label")));
             try
             {
@@ -84,7 +109,7 @@ namespace WOI_Testsuite
 
 
             // Navigate to the desired element (Dropdown Button)
-            IWebElement specificElementToClick = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//*[@id=\"root\"]/div[2]/header/div[3]/nav/ul/li[4]/div/button/div/span")));
+            IWebElement specificElementToClick = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//*[@id=\"root\"]/div[2]/header/div[3]/nav/ul/li[4]/div/button/div")));
             try
             {
                 specificElementToClick.Click();
@@ -114,7 +139,7 @@ namespace WOI_Testsuite
 
 
             // Navigate to the desired element (Dropdown Button for the second dropdown)
-            IWebElement secondDropdownToClick = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("/html/body/div/div[2]/header/div[3]/nav/ul/li[5]/div/button/div/span")));
+            IWebElement secondDropdownToClick = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//*[@id=\"root\"]/div[2]/header/div[3]/nav/ul/li[5]/div/button/div")));
             try
             {
                 secondDropdownToClick.Click();
@@ -143,7 +168,7 @@ namespace WOI_Testsuite
             Assert.That(secondSelectedOption.Displayed, Is.True, "The desired option was not successfully selected from the second dropdown.");
 
             // Navigate to the desired element (Dropdown Button for the third dropdown)
-            IWebElement thirdDropdownToClick = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("/html/body/div/div[2]/header/div[3]/nav/ul/li[6]/div/button/div/span")));
+            IWebElement thirdDropdownToClick = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("/html/body/div/div[2]/header/div[3]/nav/ul/li[6]/div/button/div")));
             try
             {
                 thirdDropdownToClick.Click();
@@ -170,6 +195,8 @@ namespace WOI_Testsuite
             // Verify the selection
             IWebElement thirdSelectedOption = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[text()='Sol Plaatje Local Municipality']"))); // Replace 'Desired Option Text' with the actual option text
             Assert.That(thirdSelectedOption.Displayed, Is.True, "The desired option was not successfully selected from the third dropdown.");
+
+
 
             // Navigate to the desired map element
             IWebElement mapElementToClick = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("/html/body/div/div[2]/div[2]/div/div[1]/div[1]/div[1]/div[4]/img[2]")));
@@ -211,86 +238,16 @@ namespace WOI_Testsuite
                 Console.WriteLine("Modal or close button not found: " + e.Message);
             }
 
+            // Verify the element displayed after clicking
+            IWebElement firstClickVerificationElement = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/div[1]/div[3]")));
+            Assert.That(firstClickVerificationElement.Displayed, Is.True, "The expected element did not appear after the first click.");
 
-
-
-
-
-            // Define the path to your Excel file
-            string filePath = @"C:\Users\MankgashaMaenetja\source\repos\WOI_TestSuite\WOI_Testsuite\WorldOfImpact\TestData\NC.xlsx"; // Update with the actual file path
-
-            // Define the connection string for .xlsx files (Excel 2007 or later)
-            string connectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=" + filePath + ";Extended Properties='Excel 12.0 Xml;HDR=YES;'";
-
-            // Create a connection to the Excel file using OLE DB
-            using (OleDbConnection connection = new OleDbConnection(connectionString))
-            {
-                try
-                {
-                    // Open the connection
-                    connection.Open();
-
-                    // Get the schema of the workbook to determine sheet names
-                    DataTable sheets = connection.GetSchema("Tables");
-                    Console.WriteLine("Sheets in the workbook:");
-                    foreach (DataRow row in sheets.Rows)
-                    {
-                        Console.WriteLine(row["TABLE_NAME"]);
-                    }
-
-                    // Define a list of sheet names that we need to read
-                    string[] sheetNames = { "One Stop Centers", "Shelters", "Containment Centers" };
-
-                    // Iterate through each sheet
-                    foreach (var sheetName in sheetNames)
-                    {
-                        // Define a query to select data from the current sheet
-                        string query = $"SELECT * FROM [{sheetNames}$]";  // Sheet names must be enclosed in square brackets and followed by a '$'
-                        OleDbDataAdapter dataAdapter = new OleDbDataAdapter(query, connection);
-                        DataTable dataTable = new DataTable();
-
-                        // Fill the DataTable with the data from the sheet
-                        dataAdapter.Fill(dataTable);
-
-                        // Print the data from the sheet
-                        Console.WriteLine($"\nData from Sheet: {sheetName}");
-                        Console.WriteLine("---------------------------------------------------");
-
-                        // Print the column names (Headers)
-                        foreach (DataColumn column in dataTable.Columns)
-                        {
-                            Console.Write(column.ColumnName.PadRight(20));
-                        }
-                        Console.WriteLine();
-
-                        // Print the rows of data
-                        foreach (DataRow row in dataTable.Rows)
-                        {
-                            foreach (var item in row.ItemArray)
-                            {
-                                Console.Write(item.ToString().PadRight(20));
-                            }
-                            Console.WriteLine();
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("Error: " + ex.Message);
-                }
-
-
-
-            }
         }
 
         [Test, Order(2)]
         public void Test_SelectBBChartViewDashboard()
         {
-            //if (!Test_SelectCrimeDashboard_Completed)
-            //{
-            //    Assert.Ignore("Skipping this test because Test_SelectCrimeDashboardView did not complete successfully.");
-            //}
+         
 
             // Wait for the overlay to disappear if present
             try
@@ -350,7 +307,7 @@ namespace WOI_Testsuite
 
 
             // Navigate to the desired element (Dropdown Button)
-            IWebElement specificElementToClick = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//*[@id=\"root\"]/div[2]/header/div[3]/nav/ul/li[4]/div/button/div/span")));
+            IWebElement specificElementToClick = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//*[@id=\"root\"]/div[2]/header/div[3]/nav/ul/li[4]/div/button/div")));
             try
             {
                 specificElementToClick.Click();
@@ -359,32 +316,28 @@ namespace WOI_Testsuite
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", specificElementToClick);
             }
-
             Thread.Sleep(2000); // Delay for 2 seconds
-
             // Wait for the dropdown to be visible
             IWebElement dropdownMenu = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/header/div[3]/nav/ul/li[4]/div/button/div")));
 
             // Select the "Northern Cape" option from the dropdown
-            IWebElement northWestOption = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//li[text()='North West']")));
+            IWebElement northernCapeOption = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//li[text()='Northern Cape']")));
             try
             {
-                northWestOption.Click();
+                northernCapeOption.Click();
             }
             catch (ElementClickInterceptedException)
             {
-                ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", northWestOption);
+                ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", northernCapeOption);
             }
-
             Thread.Sleep(2000); // Delay for 2 seconds
-
             // Verify the selection
-            IWebElement selectedOption = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[text()='North West']"))); // Adjust the XPath to match the visible selected option.
-            Assert.That(selectedOption.Displayed, Is.True, "North West was not successfully selected from the dropdown.");
+            IWebElement selectedOption = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[text()='Northern Cape']"))); // Adjust the XPath to match the visible selected option.
+            Assert.That(selectedOption.Displayed, Is.True, "Northern Cape was not successfully selected from the dropdown.");
 
 
             // Navigate to the desired element (Dropdown Button for the second dropdown)
-            IWebElement secondDropdownToClick = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("/html/body/div/div[2]/header/div[3]/nav/ul/li[5]/div/button/div/span")));
+            IWebElement secondDropdownToClick = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//*[@id=\"root\"]/div[2]/header/div[3]/nav/ul/li[5]/div/button/div")));
             try
             {
                 secondDropdownToClick.Click();
@@ -393,14 +346,12 @@ namespace WOI_Testsuite
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", secondDropdownToClick);
             }
-
             Thread.Sleep(2000); // Delay for 2 seconds
-
             // Wait for the dropdown to be visible
             IWebElement secondDropdownMenu = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/header/div[3]/nav/ul/li[5]/div/button/div")));
 
             // Select the desired option from the second dropdown (adjust the XPath for the specific option)
-            IWebElement secondDropdownOption = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//li[text()='Dr Ruth Segomotsi Mompati']"))); // Replace 'Desired Option Text' with the actual option text
+            IWebElement secondDropdownOption = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//li[text()='Frances Baard']"))); // Replace 'Desired Option Text' with the actual option text
             try
             {
                 secondDropdownOption.Click();
@@ -409,15 +360,13 @@ namespace WOI_Testsuite
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", secondDropdownOption);
             }
-
             Thread.Sleep(2000); // Delay for 2 seconds
-
             // Verify the selection
-            IWebElement secondSelectedOption = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[text()='Dr Ruth Segomotsi Mompati']"))); // Replace 'Desired Option Text' with the actual option text
+            IWebElement secondSelectedOption = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[text()='Frances Baard']"))); // Replace 'Desired Option Text' with the actual option text
             Assert.That(secondSelectedOption.Displayed, Is.True, "The desired option was not successfully selected from the second dropdown.");
 
             // Navigate to the desired element (Dropdown Button for the third dropdown)
-            IWebElement thirdDropdownToClick = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("/html/body/div/div[2]/header/div[3]/nav/ul/li[6]/div/button/div/span")));
+            IWebElement thirdDropdownToClick = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("/html/body/div/div[2]/header/div[3]/nav/ul/li[6]/div/button/div")));
             try
             {
                 thirdDropdownToClick.Click();
@@ -426,14 +375,12 @@ namespace WOI_Testsuite
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", thirdDropdownToClick);
             }
-
             Thread.Sleep(2000); // Delay for 2 seconds
-
             // Wait for the dropdown to be visible
             IWebElement thirdDropdownMenu = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/header/div[3]/nav/ul/li[6]/div/button/div")));
 
             // Select the desired option from the third dropdown (adjust the XPath for the specific option)
-            IWebElement thirdDropdownOption = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//li[text()='Lekwa-Teemane Local Municipality']"))); // Replace 'Desired Option Text' with the actual option text
+            IWebElement thirdDropdownOption = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//li[text()='Sol Plaatje Local Municipality']"))); // Replace 'Desired Option Text' with the actual option text
             try
             {
                 thirdDropdownOption.Click();
@@ -443,9 +390,8 @@ namespace WOI_Testsuite
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", thirdDropdownOption);
             }
             Thread.Sleep(2000); // Delay for 2 seconds
-
             // Verify the selection
-            IWebElement thirdSelectedOption = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[text()='Lekwa-Teemane Local Municipality']"))); // Replace 'Desired Option Text' with the actual option text
+            IWebElement thirdSelectedOption = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[text()='Sol Plaatje Local Municipality']"))); // Replace 'Desired Option Text' with the actual option text
             Assert.That(thirdSelectedOption.Displayed, Is.True, "The desired option was not successfully selected from the third dropdown.");
 
 
@@ -457,7 +403,7 @@ namespace WOI_Testsuite
             Assert.That(firstClickVerificationElement.Displayed, Is.True, "The expected element did not appear after the first click.");
 
 
-            //Test_SelectCrimeDashboard_Completed = true;
+            
         }
 
         [Test, Order (3)]
@@ -504,7 +450,7 @@ namespace WOI_Testsuite
             Assert.That(inputElementToClick.Selected, Is.True, "The input element was not successfully selected.");
 
             // Locate and click the specific element
-            IWebElement specificLabel = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("/html/body/div/div[2]/div[1]/div[1]/ul/li[2]/ul/li[4]/label")));
+            IWebElement specificLabel = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("/html/body/div/div[2]/div[1]/div[1]/ul/li[2]/ul/li[3]/label")));
             try
             {
                 specificLabel.Click();
@@ -516,8 +462,9 @@ namespace WOI_Testsuite
 
             Thread.Sleep(2000); // Delay for 2 seconds
 
+
             // Navigate to the desired element (Dropdown Button)
-            IWebElement specificElementToClick = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//*[@id=\"root\"]/div[2]/header/div[3]/nav/ul/li[4]/div/button/div/span")));
+            IWebElement specificElementToClick = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//*[@id=\"root\"]/div[2]/header/div[3]/nav/ul/li[4]/div/button/div")));
             try
             {
                 specificElementToClick.Click();
@@ -527,7 +474,9 @@ namespace WOI_Testsuite
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", specificElementToClick);
             }
             Thread.Sleep(2000); // Delay for 2 seconds
-            // Thread.Sleep(2000); // Delay for 2 seconds Wait for the dropdown to be visible
+            // Wait for the dropdown to be visible
+
+   
             IWebElement dropdownMenu = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/header/div[3]/nav/ul/li[4]/div/button/div")));
 
             // Select the "Northern Cape" option from the dropdown
@@ -547,7 +496,7 @@ namespace WOI_Testsuite
 
 
             // Navigate to the desired element (Dropdown Button for the second dropdown)
-            IWebElement secondDropdownToClick = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("/html/body/div/div[2]/header/div[3]/nav/ul/li[5]/div/button/div/span")));
+            IWebElement secondDropdownToClick = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//*[@id=\"root\"]/div[2]/header/div[3]/nav/ul/li[5]/div/button/div")));
             try
             {
                 secondDropdownToClick.Click();
@@ -561,6 +510,7 @@ namespace WOI_Testsuite
             IWebElement secondDropdownMenu = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/header/div[3]/nav/ul/li[5]/div/button/div")));
 
             // Select the desired option from the second dropdown (adjust the XPath for the specific option)
+            
             IWebElement secondDropdownOption = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//li[text()='Amathole']"))); // Replace 'Desired Option Text' with the actual option text
             try
             {
@@ -576,7 +526,7 @@ namespace WOI_Testsuite
             Assert.That(secondSelectedOption.Displayed, Is.True, "The desired option was not successfully selected from the second dropdown.");
 
             // Navigate to the desired element (Dropdown Button for the third dropdown)
-            IWebElement thirdDropdownToClick = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("/html/body/div/div[2]/header/div[3]/nav/ul/li[6]/div/button/div/span")));
+            IWebElement thirdDropdownToClick = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("/html/body/div/div[2]/header/div[3]/nav/ul/li[6]/div/button/div")));
             try
             {
                 thirdDropdownToClick.Click();
@@ -586,11 +536,12 @@ namespace WOI_Testsuite
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", thirdDropdownToClick);
             }
             Thread.Sleep(2000); // Delay for 2 seconds
+
             // Wait for the dropdown to be visible
             IWebElement thirdDropdownMenu = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/header/div[3]/nav/ul/li[6]/div/button/div")));
 
             // Select the desired option from the third dropdown (adjust the XPath for the specific option)
-            IWebElement thirdDropdownOption = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//li[text()='Mnquma Local Municipality']"))); // Replace 'Desired Option Text' with the actual option text
+            IWebElement thirdDropdownOption = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//li[text()='Mbhashe Local Municipality']"))); // Replace 'Desired Option Text' with the actual option text
             try
             {
                 thirdDropdownOption.Click();
@@ -601,21 +552,11 @@ namespace WOI_Testsuite
             }
             Thread.Sleep(2000); // Delay for 2 seconds
             // Verify the selection
-            IWebElement thirdSelectedOption = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[text()='Mnquma Local Municipality']"))); // Replace 'Desired Option Text' with the actual option text
+            IWebElement thirdSelectedOption = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[text()='Mbhashe Local Municipality']"))); // Replace 'Desired Option Text' with the actual option text
             Assert.That(thirdSelectedOption.Displayed, Is.True, "The desired option was not successfully selected from the third dropdown.");
 
-            // Verify the element displayed after clicking
-            IWebElement firstClickVerificationElement = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/div[1]/div[3]")));
-            Assert.That(firstClickVerificationElement.Displayed, Is.True, "The expected element did not appear after the first click.");
 
-
-            
         }
-
-
-
-
-
 
 
         [OneTimeTearDown]
