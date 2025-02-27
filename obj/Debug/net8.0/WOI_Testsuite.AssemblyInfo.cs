@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WOI_Testsuite")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+319f5b0e7542fbbc0d126d79d64cf4462d0b084d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8a352952d86c6b6285546f938663c54b8849bf0e")]
 [assembly: System.Reflection.AssemblyProductAttribute("WOI_Testsuite")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WOI_Testsuite")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
