@@ -212,29 +212,23 @@ namespace WOI_Testsuite.HC_Public_Dashboard
 
             // Click on the first element in the dashboard using JavaScript click as a fallback /html/body/div/div[2]/div/div/div/div[2]
 
+
+            IWebElement targetElement = _wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("#root > div.public-container > div > div > div > div.component-nav-item.organisational-health-check.default")));
+
             try
             {
-                IWebElement targetElement = _wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("#organisational-health-check-desc")));
-
-                // Perform actions with the element (click, get text, etc.)
-                Console.WriteLine("Element text: " + targetElement.Text); // Get the text of the element
-                targetElement.Click(); // Click the element (if clickable)
-
-                // Optionally wait to observe the result
-                System.Threading.Thread.Sleep(2000);
+                targetElement.Click();
             }
-            catch (NoSuchElementException ex)
+            catch (ElementClickInterceptedException)
             {
-                Console.WriteLine("Element not found: " + ex.Message);
+                ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", targetElement);
             }
-            catch (WebDriverTimeoutException ex)
-            {
-                Console.WriteLine("Element did not appear in time: " + ex.Message);
-            }
+
+            Thread.Sleep(2000); // Delay for 2 seconds
 
            
 
-            IWebElement firstElementToClick = _wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("#root > div.public-container > header > div.desktop-filter > div > nav > ul > div > li:nth-child(2) > a")));
+            IWebElement firstElementToClick = _wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("#root > div.public-container > div > div > div > div.component-nav-item.organisational-health-check.default")));
             try
             {
                 firstElementToClick.Click();

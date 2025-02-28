@@ -30,29 +30,76 @@ namespace WOI_Testsuite.Admins_Login
         [Test, Order(1)]
         public void Logins()
         {
+            //try
+            //{
+
+            //    IWebElement targetElement = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/header/div[2]/nav[1]/ul/li[4]/a")));
+
+            //    // Click the element
+            //    targetElement.Click();
+
+            //    Console.WriteLine("Element clicked successfully!");
+            //}
+            //catch (NoSuchElementException)
+            //{
+            //    Console.WriteLine("Element not found!");
+            //}
+            //catch (WebDriverTimeoutException)
+            //{
+            //    Console.WriteLine("Element not visible within timeout period!");
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine($"Error: {ex.Message}");
+            //}
+
+
+            // Wait for the overlay to disappear if present
             try
             {
-
-                IWebElement targetElement = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/header/div[2]/nav[1]/ul/li[4]/a")));
-
-                // Click the element
-                targetElement.Click();
-
-                Console.WriteLine("Element clicked successfully!");
-            }
-            catch (NoSuchElementException)
-            {
-                Console.WriteLine("Element not found!");
+                _wait.Until(ExpectedConditions.InvisibilityOfElementLocated(By.ClassName("overlay")));
             }
             catch (WebDriverTimeoutException)
             {
-                Console.WriteLine("Element not visible within timeout period!");
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Error: {ex.Message}");
+                Console.WriteLine("Overlay did not disappear within the wait time.");
             }
 
+            Thread.Sleep(2000); // Delay for 2 seconds
+
+            // Locate the element using CSS Selector
+            IWebElement targetElement = _driver.FindElement(By.CssSelector("#root > div.public-container > header > div.header-top > nav.desktop > ul > li:nth-child(4) > a"));
+            try { 
+            // Click the element
+            targetElement.Click();
+
+            // Add delay to observe (optional)
+            System.Threading.Thread.Sleep(3000);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Error: " + ex.Message);
+        }
+
+
+
+            //try
+            //{
+               
+
+            //    // Wait for the element to be visible
+            //    WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            //    IWebElement inputField = wait.Until(d => d.FindElement(By.CssSelector("#root > div.auth-container > div > div:nth-child(3) > div:nth-child(1) > div > input")));
+
+            //    // Input text into the field
+            //    inputField.SendKeys("YourTextHere"); // Replace with actual input
+
+            //    // Add delay to observe (optional)
+            //    Thread.Sleep(3000);
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine("Error: " + ex.Message);
+            //}
 
 
             try
@@ -60,11 +107,11 @@ namespace WOI_Testsuite.Admins_Login
 
 
                 // Find and fill the username field
-                IWebElement usernameField = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/div/div[2]/div[1]/input")));
+                IWebElement usernameField = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.auth-container > div > div:nth-child(3) > div:nth-child(1) > div > input")));
                 usernameField.SendKeys("mankgasha@digitalsolutionfoundry.co.za");
 
                 // Find and fill the password field
-                IWebElement passwordField = _driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[2]/div[2]/input"));
+                IWebElement passwordField = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.auth-container > div > div:nth-child(3) > div:nth-child(2) > div > input")));
                 passwordField.SendKeys("Password@123456789");
 
                 // Click the login button
@@ -115,27 +162,31 @@ namespace WOI_Testsuite.Admins_Login
         [Test, Order(2)]
         public void LoginHC()
         {
+
+            // Wait for the overlay to disappear if present
             try
             {
-
-                IWebElement targetElement = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/header/div[2]/nav[1]/ul/li[4]/a")));
-
-                // Click the element
-                targetElement.Click();
-
-                Console.WriteLine("Element clicked successfully!");
-            }
-            catch (NoSuchElementException)
-            {
-                Console.WriteLine("Element not found!");
+                _wait.Until(ExpectedConditions.InvisibilityOfElementLocated(By.ClassName("overlay")));
             }
             catch (WebDriverTimeoutException)
             {
-                Console.WriteLine("Element not visible within timeout period!");
+                Console.WriteLine("Overlay did not disappear within the wait time.");
+            }
+
+            Thread.Sleep(2000); // Delay for 2 seconds
+
+            IWebElement targetElement = _driver.FindElement(By.CssSelector("#root > div.public-container > header > div.header-top > nav.desktop > ul > li:nth-child(4) > a"));
+            try
+            {
+                // Click the element
+                targetElement.Click();
+
+                // Add delay to observe (optional)
+                System.Threading.Thread.Sleep(3000);
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error: {ex.Message}");
+                Console.WriteLine("Error: " + ex.Message);
             }
 
 
@@ -145,11 +196,11 @@ namespace WOI_Testsuite.Admins_Login
 
 
                 // Find and fill the username field
-                IWebElement usernameField = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/div/div[2]/div[1]/input")));
+                IWebElement usernameField = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.auth-container > div > div:nth-child(3) > div:nth-child(1) > div > input")));
                 usernameField.SendKeys("dora1@gmail.com");
 
                 // Find and fill the password field
-                IWebElement passwordField = _driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[2]/div[2]/input"));
+                IWebElement passwordField = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.auth-container > div > div:nth-child(3) > div:nth-child(2) > div > input")));
                 passwordField.SendKeys("Password@123456789");
 
                 // Click the login button
@@ -202,27 +253,31 @@ namespace WOI_Testsuite.Admins_Login
         [Test, Order(3)]
         public void LoginBB()
         {
+
+            // Wait for the overlay to disappear if present
             try
             {
-
-                IWebElement targetElement = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/header/div[2]/nav[1]/ul/li[4]/a")));
-
-                // Click the element
-                targetElement.Click();
-
-                Console.WriteLine("Element clicked successfully!");
-            }
-            catch (NoSuchElementException)
-            {
-                Console.WriteLine("Element not found!");
+                _wait.Until(ExpectedConditions.InvisibilityOfElementLocated(By.ClassName("overlay")));
             }
             catch (WebDriverTimeoutException)
             {
-                Console.WriteLine("Element not visible within timeout period!");
+                Console.WriteLine("Overlay did not disappear within the wait time.");
+            }
+
+            Thread.Sleep(2000); // Delay for 2 seconds
+
+            IWebElement targetElement = _driver.FindElement(By.CssSelector("#root > div.public-container > header > div.header-top > nav.desktop > ul > li:nth-child(4) > a"));
+            try
+            {
+                // Click the element
+                targetElement.Click();
+
+                // Add delay to observe (optional)
+                System.Threading.Thread.Sleep(3000);
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error: {ex.Message}");
+                Console.WriteLine("Error: " + ex.Message);
             }
 
 
@@ -232,11 +287,11 @@ namespace WOI_Testsuite.Admins_Login
 
 
                 // Find and fill the username field
-                IWebElement usernameField = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/div/div[2]/div[1]/input")));
+                IWebElement usernameField = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.auth-container > div > div:nth-child(3) > div:nth-child(1) > div > input")));
                 usernameField.SendKeys("siyasanga.Nkungwana@ecotp.gov.za");
 
                 // Find and fill the password field
-                IWebElement passwordField = _driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[2]/div[2]/input"));
+                IWebElement passwordField = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.auth-container > div > div:nth-child(3) > div:nth-child(2) > div > input")));
                 passwordField.SendKeys("Password@123456789");
 
                 // Click the login button
@@ -285,27 +340,31 @@ namespace WOI_Testsuite.Admins_Login
         [Test, Order(4)]
         public void LoginWithEmptyFields()
         {
+
+            // Wait for the overlay to disappear if present
             try
             {
-
-                IWebElement targetElement = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/header/div[2]/nav[1]/ul/li[4]/a")));
-
-                // Click the element
-                targetElement.Click();
-
-                Console.WriteLine("Element clicked successfully!");
-            }
-            catch (NoSuchElementException)
-            {
-                Console.WriteLine("Element not found!");
+                _wait.Until(ExpectedConditions.InvisibilityOfElementLocated(By.ClassName("overlay")));
             }
             catch (WebDriverTimeoutException)
             {
-                Console.WriteLine("Element not visible within timeout period!");
+                Console.WriteLine("Overlay did not disappear within the wait time.");
+            }
+
+            Thread.Sleep(2000); // Delay for 2 seconds
+
+            IWebElement targetElement = _driver.FindElement(By.CssSelector("#root > div.public-container > header > div.header-top > nav.desktop > ul > li:nth-child(4) > a"));
+            try
+            {
+                // Click the element
+                targetElement.Click();
+
+                // Add delay to observe (optional)
+                System.Threading.Thread.Sleep(3000);
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error: {ex.Message}");
+                Console.WriteLine("Error: " + ex.Message);
             }
 
 
@@ -315,11 +374,11 @@ namespace WOI_Testsuite.Admins_Login
 
 
                 // Find and fill the username field
-                IWebElement usernameField = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/div/div[2]/div[1]/input")));
+                IWebElement usernameField = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.auth-container > div > div:nth-child(3) > div:nth-child(1) > div > input")));
                 usernameField.SendKeys("");
 
                 // Find and fill the password field
-                IWebElement passwordField = _driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[2]/div[2]/input"));
+                IWebElement passwordField = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.auth-container > div > div:nth-child(3) > div:nth-child(2) > div > input")));
                 passwordField.SendKeys("");
 
                 // Click the login button
@@ -342,27 +401,31 @@ namespace WOI_Testsuite.Admins_Login
         [Test, Order(5)]
         public void LoginWithEmptyEmailField()
         {
+
+            // Wait for the overlay to disappear if present
             try
             {
-
-                IWebElement targetElement = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/header/div[2]/nav[1]/ul/li[4]/a")));
-
-                // Click the element
-                targetElement.Click();
-
-                Console.WriteLine("Element clicked successfully!");
-            }
-            catch (NoSuchElementException)
-            {
-                Console.WriteLine("Element not found!");
+                _wait.Until(ExpectedConditions.InvisibilityOfElementLocated(By.ClassName("overlay")));
             }
             catch (WebDriverTimeoutException)
             {
-                Console.WriteLine("Element not visible within timeout period!");
+                Console.WriteLine("Overlay did not disappear within the wait time.");
+            }
+
+            Thread.Sleep(2000); // Delay for 2 seconds
+
+            IWebElement targetElement = _driver.FindElement(By.CssSelector("#root > div.public-container > header > div.header-top > nav.desktop > ul > li:nth-child(4) > a"));
+            try
+            {
+                // Click the element
+                targetElement.Click();
+
+                // Add delay to observe (optional)
+                System.Threading.Thread.Sleep(3000);
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error: {ex.Message}");
+                Console.WriteLine("Error: " + ex.Message);
             }
 
 
@@ -372,11 +435,11 @@ namespace WOI_Testsuite.Admins_Login
 
 
                 // Find and fill the username field
-                IWebElement usernameField = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/div/div[2]/div[1]/input")));
+                IWebElement usernameField = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.auth-container > div > div:nth-child(3) > div:nth-child(1) > div > input")));
                 usernameField.SendKeys("");
 
                 // Find and fill the password field
-                IWebElement passwordField = _driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[2]/div[2]/input"));
+                IWebElement passwordField = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.auth-container > div > div:nth-child(3) > div:nth-child(2) > div > input")));
                 passwordField.SendKeys("Password@123456789");
 
                 // Click the login button
@@ -398,27 +461,31 @@ namespace WOI_Testsuite.Admins_Login
         [Test, Order(6)]
         public void LoginWithWrongDetails()
         {
+
+            // Wait for the overlay to disappear if present
             try
             {
-
-                IWebElement targetElement = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/header/div[2]/nav[1]/ul/li[4]/a")));
-
-                // Click the element
-                targetElement.Click();
-
-                Console.WriteLine("Element clicked successfully!");
-            }
-            catch (NoSuchElementException)
-            {
-                Console.WriteLine("Element not found!");
+                _wait.Until(ExpectedConditions.InvisibilityOfElementLocated(By.ClassName("overlay")));
             }
             catch (WebDriverTimeoutException)
             {
-                Console.WriteLine("Element not visible within timeout period!");
+                Console.WriteLine("Overlay did not disappear within the wait time.");
+            }
+
+            Thread.Sleep(2000); // Delay for 2 seconds
+
+            IWebElement targetElement = _driver.FindElement(By.CssSelector("#root > div.public-container > header > div.header-top > nav.desktop > ul > li:nth-child(4) > a"));
+            try
+            {
+                // Click the element
+                targetElement.Click();
+
+                // Add delay to observe (optional)
+                System.Threading.Thread.Sleep(3000);
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error: {ex.Message}");
+                Console.WriteLine("Error: " + ex.Message);
             }
 
 
@@ -428,11 +495,11 @@ namespace WOI_Testsuite.Admins_Login
 
 
                 // Find and fill the username field
-                IWebElement usernameField = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/div/div[2]/div[1]/input")));
+                IWebElement usernameField = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.auth-container > div > div:nth-child(3) > div:nth-child(1) > div > input")));
                 usernameField.SendKeys("siyasanga.Nkungana@ecotp.gov.za");
 
                 // Find and fill the password field
-                IWebElement passwordField = _driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[2]/div[2]/input"));
+                IWebElement passwordField = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.auth-container > div > div:nth-child(3) > div:nth-child(2) > div > input")));
                 passwordField.SendKeys("Password@12345789");
 
                 // Click the login button
@@ -453,27 +520,31 @@ namespace WOI_Testsuite.Admins_Login
         [Test, Order(7)]
         public void LoginWithInvalidEmail()
         {
+
+            // Wait for the overlay to disappear if present
             try
             {
-
-                IWebElement targetElement = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/header/div[2]/nav[1]/ul/li[4]/a")));
-
-                // Click the element
-                targetElement.Click();
-
-                Console.WriteLine("Element clicked successfully!");
-            }
-            catch (NoSuchElementException)
-            {
-                Console.WriteLine("Element not found!");
+                _wait.Until(ExpectedConditions.InvisibilityOfElementLocated(By.ClassName("overlay")));
             }
             catch (WebDriverTimeoutException)
             {
-                Console.WriteLine("Element not visible within timeout period!");
+                Console.WriteLine("Overlay did not disappear within the wait time.");
+            }
+
+            Thread.Sleep(2000); // Delay for 2 seconds
+
+            IWebElement targetElement = _driver.FindElement(By.CssSelector("#root > div.public-container > header > div.header-top > nav.desktop > ul > li:nth-child(4) > a"));
+            try
+            {
+                // Click the element
+                targetElement.Click();
+
+                // Add delay to observe (optional)
+                System.Threading.Thread.Sleep(3000);
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error: {ex.Message}");
+                Console.WriteLine("Error: " + ex.Message);
             }
 
 
@@ -483,11 +554,11 @@ namespace WOI_Testsuite.Admins_Login
 
 
                 // Find and fill the username field
-                IWebElement usernameField = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/div/div[2]/div[1]/input")));
+                IWebElement usernameField = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.auth-container > div > div:nth-child(3) > div:nth-child(1) > div > input")));
                 usernameField.SendKeys("siyasanga.Nkungwanaecotp.gov.za");
 
                 // Find and fill the password field
-                IWebElement passwordField = _driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[2]/div[2]/input"));
+                IWebElement passwordField = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.auth-container > div > div:nth-child(3) > div:nth-child(2) > div > input")));
                 passwordField.SendKeys("Password@123456789");
 
                 // Click the login button
@@ -510,27 +581,31 @@ namespace WOI_Testsuite.Admins_Login
         [Test, Order(8)]
         public void LoginWithEmptyPasswordField()
         {
+
+            // Wait for the overlay to disappear if present
             try
             {
-
-                IWebElement targetElement = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/header/div[2]/nav[1]/ul/li[4]/a")));
-
-                // Click the element
-                targetElement.Click();
-
-                Console.WriteLine("Element clicked successfully!");
-            }
-            catch (NoSuchElementException)
-            {
-                Console.WriteLine("Element not found!");
+                _wait.Until(ExpectedConditions.InvisibilityOfElementLocated(By.ClassName("overlay")));
             }
             catch (WebDriverTimeoutException)
             {
-                Console.WriteLine("Element not visible within timeout period!");
+                Console.WriteLine("Overlay did not disappear within the wait time.");
+            }
+
+            Thread.Sleep(2000); // Delay for 2 seconds
+
+            IWebElement targetElement = _driver.FindElement(By.CssSelector("#root > div.public-container > header > div.header-top > nav.desktop > ul > li:nth-child(4) > a"));
+            try
+            {
+                // Click the element
+                targetElement.Click();
+
+                // Add delay to observe (optional)
+                System.Threading.Thread.Sleep(3000);
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error: {ex.Message}");
+                Console.WriteLine("Error: " + ex.Message);
             }
 
 
@@ -540,11 +615,11 @@ namespace WOI_Testsuite.Admins_Login
 
 
                 // Find and fill the username field
-                IWebElement usernameField = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/div/div[2]/div[1]/input")));
+                IWebElement usernameField = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.auth-container > div > div:nth-child(3) > div:nth-child(1) > div > input")));
                 usernameField.SendKeys("siyasanga.Nkungwana@ecotp.gov.za");
 
                 // Find and fill the password field
-                IWebElement passwordField = _driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[2]/div[2]/input"));
+                IWebElement passwordField = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.auth-container > div > div:nth-child(3) > div:nth-child(2) > div > input")));
                 passwordField.SendKeys("");
 
                 // Click the login button
@@ -566,27 +641,31 @@ namespace WOI_Testsuite.Admins_Login
         [Test, Order(9)]
         public void LoginWithNotExistingEmail()
         {
+
+            // Wait for the overlay to disappear if present
             try
             {
-
-                IWebElement targetElement = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/header/div[2]/nav[1]/ul/li[4]/a")));
-
-                // Click the element
-                targetElement.Click();
-
-                Console.WriteLine("Element clicked successfully!");
-            }
-            catch (NoSuchElementException)
-            {
-                Console.WriteLine("Element not found!");
+                _wait.Until(ExpectedConditions.InvisibilityOfElementLocated(By.ClassName("overlay")));
             }
             catch (WebDriverTimeoutException)
             {
-                Console.WriteLine("Element not visible within timeout period!");
+                Console.WriteLine("Overlay did not disappear within the wait time.");
+            }
+
+            Thread.Sleep(2000); // Delay for 2 seconds
+
+            IWebElement targetElement = _driver.FindElement(By.CssSelector("#root > div.public-container > header > div.header-top > nav.desktop > ul > li:nth-child(4) > a"));
+            try
+            {
+                // Click the element
+                targetElement.Click();
+
+                // Add delay to observe (optional)
+                System.Threading.Thread.Sleep(3000);
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error: {ex.Message}");
+                Console.WriteLine("Error: " + ex.Message);
             }
 
 
@@ -596,11 +675,11 @@ namespace WOI_Testsuite.Admins_Login
 
 
                 // Find and fill the username field
-                IWebElement usernameField = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/div/div[2]/div/div[2]/div[1]/input")));
+                IWebElement usernameField = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.auth-container > div > div:nth-child(3) > div:nth-child(1) > div > input")));
                 usernameField.SendKeys("mosima@gmail.co.za");
 
                 // Find and fill the password field
-                IWebElement passwordField = _driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[2]/div[2]/input"));
+                IWebElement passwordField = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.auth-container > div > div:nth-child(3) > div:nth-child(2) > div > input")));
                 passwordField.SendKeys("Password@123456789");
 
                 // Click the login button

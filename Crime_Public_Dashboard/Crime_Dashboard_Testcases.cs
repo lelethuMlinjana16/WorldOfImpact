@@ -329,24 +329,7 @@ namespace WOI_Testsuite.Crime_Public_Dashboard
 
             Thread.Sleep(2000); // Delay for 2 seconds
 
-            //// Click on the desired input element
-           
-            //IWebElement inputElementToClick = _wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("#root > div.public-container > div > div > div > div.component-nav-item.gbvf-indicators.active > ul > li:nth-child(2) > label > input[type=checkbox]")));
-            //try
-            //{
-            //    inputElementToClick.Click();
-            //}
-            //catch (ElementClickInterceptedException)
-            //{
-            //    ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", inputElementToClick);
-            //}
-
-            //Thread.Sleep(2000); // Delay for 2 seconds
-
-            //// Optionally, add verification if needed
-            //Assert.That(inputElementToClick.Selected, Is.True, "The input element was not successfully selected.");
-
-
+       
 
             // Navigate to the desired element (Dropdown Button)
             IWebElement specificElementToClick = _wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("#root > div.public-container > header > div.desktop-filter > div > nav > ul > li:nth-child(2) > div > button > div")));
