@@ -218,7 +218,7 @@ namespace WOI_Testsuite.BB_Admin_Dashboard
 
             try
             {
-               
+
 
                 // Function to check if an input field is already filled
                 bool IsFieldEmpty(By selector)
@@ -313,9 +313,6 @@ namespace WOI_Testsuite.BB_Admin_Dashboard
                 Console.WriteLine("Error: ");
             }
 
-
-
-
             //Select Add additional Contact Person
 
 
@@ -353,6 +350,30 @@ namespace WOI_Testsuite.BB_Admin_Dashboard
                 Console.WriteLine($"Login Failed");
             }
 
+
+            // Navigate to the desired element (Dropdown Button)
+            IWebElement specificElementToClick14 = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//*[@id=\"root\"]/div[2]/header/div[2]/nav[1]/ul/li[2]/div/button/h3/span")));
+            try
+            {
+                specificElementToClick14.Click();
+            }
+            catch (ElementClickInterceptedException)
+            {
+                ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", specificElementToClick14);
+            }
+            Thread.Sleep(2000); // Delay for 2 seconds
+
+            // Wait for the dropdown to be visible
+
+            IWebElement logoutOption = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//li[text()='Logout']")));
+            try
+            {
+                logoutOption.Click();
+            }
+            catch (ElementClickInterceptedException)
+            {
+                ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", logoutOption);
+            }
 
         }
 

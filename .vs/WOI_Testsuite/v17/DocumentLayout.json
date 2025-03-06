@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\MankgashaMaenetja\\source\\repos\\WOI_TestSuite\\WOI_Testsuite\\WorldOfImpact\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{432679F1-3BE5-476B-A3E6-936816625F87}|WOI_Testsuite.csproj|c:\\users\\mankgashamaenetja\\source\\repos\\woi_testsuite\\woi_testsuite\\worldofimpact\\woi_admin_dashboard\\woiadmindasboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{432679F1-3BE5-476B-A3E6-936816625F87}|WOI_Testsuite.csproj|solutionrelative:woi_admin_dashboard\\woiadmindasboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{432679F1-3BE5-476B-A3E6-936816625F87}|WOI_Testsuite.csproj|c:\\users\\mankgashamaenetja\\source\\repos\\woi_testsuite\\woi_testsuite\\worldofimpact\\bb_admin_dashboard\\bbadmindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{432679F1-3BE5-476B-A3E6-936816625F87}|WOI_Testsuite.csproj|solutionrelative:bb_admin_dashboard\\bbadmindashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -17,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{432679F1-3BE5-476B-A3E6-936816625F87}|WOI_Testsuite.csproj|c:\\users\\mankgashamaenetja\\source\\repos\\woi_testsuite\\woi_testsuite\\worldofimpact\\crime_public_dashboard\\crime_dashboard_testcases.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{432679F1-3BE5-476B-A3E6-936816625F87}|WOI_Testsuite.csproj|solutionrelative:crime_public_dashboard\\crime_dashboard_testcases.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{432679F1-3BE5-476B-A3E6-936816625F87}|WOI_Testsuite.csproj|c:\\users\\mankgashamaenetja\\source\\repos\\woi_testsuite\\woi_testsuite\\worldofimpact\\hc_public_dashboard\\hc_dashboard_testcases.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{432679F1-3BE5-476B-A3E6-936816625F87}|WOI_Testsuite.csproj|solutionrelative:hc_public_dashboard\\hc_dashboard_testcases.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{432679F1-3BE5-476B-A3E6-936816625F87}|WOI_Testsuite.csproj|c:\\users\\mankgashamaenetja\\source\\repos\\woi_testsuite\\woi_testsuite\\worldofimpact\\public_dashboard\\contactdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -45,7 +45,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -73,28 +73,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Crime_Dashboard_Testcases.cs",
-              "DocumentMoniker": "C:\\Users\\MankgashaMaenetja\\source\\repos\\WOI_TestSuite\\WOI_Testsuite\\WorldOfImpact\\Crime_Public_Dashboard\\Crime_Dashboard_Testcases.cs",
-              "RelativeDocumentMoniker": "Crime_Public_Dashboard\\Crime_Dashboard_Testcases.cs",
-              "ToolTip": "C:\\Users\\MankgashaMaenetja\\source\\repos\\WOI_TestSuite\\WOI_Testsuite\\WorldOfImpact\\Crime_Public_Dashboard\\Crime_Dashboard_Testcases.cs",
-              "RelativeToolTip": "Crime_Public_Dashboard\\Crime_Dashboard_Testcases.cs",
-              "ViewState": "AQIAAGYAAAAAAAAAAAAowGoAAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "WOIAdminDasboard.cs",
+              "DocumentMoniker": "C:\\Users\\MankgashaMaenetja\\source\\repos\\WOI_TestSuite\\WOI_Testsuite\\WorldOfImpact\\WOI_Admin_Dashboard\\WOIAdminDasboard.cs",
+              "RelativeDocumentMoniker": "WOI_Admin_Dashboard\\WOIAdminDasboard.cs",
+              "ToolTip": "C:\\Users\\MankgashaMaenetja\\source\\repos\\WOI_TestSuite\\WOI_Testsuite\\WorldOfImpact\\WOI_Admin_Dashboard\\WOIAdminDasboard.cs",
+              "RelativeToolTip": "WOI_Admin_Dashboard\\WOIAdminDasboard.cs",
+              "ViewState": "AQIAAEMBAAAAAAAAAAAAwF4BAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-22T12:26:11.774Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "HC_Dashboard_Testcases.cs",
-              "DocumentMoniker": "C:\\Users\\MankgashaMaenetja\\source\\repos\\WOI_TestSuite\\WOI_Testsuite\\WorldOfImpact\\HC_Public_Dashboard\\HC_Dashboard_Testcases.cs",
-              "RelativeDocumentMoniker": "HC_Public_Dashboard\\HC_Dashboard_Testcases.cs",
-              "ToolTip": "C:\\Users\\MankgashaMaenetja\\source\\repos\\WOI_TestSuite\\WOI_Testsuite\\WorldOfImpact\\HC_Public_Dashboard\\HC_Dashboard_Testcases.cs",
-              "RelativeToolTip": "HC_Public_Dashboard\\HC_Dashboard_Testcases.cs",
-              "ViewState": "AQIAAJYAAAAAAAAAAAAowAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T10:07:24.683Z",
+              "WhenOpened": "2025-03-06T08:51:34.127Z",
               "EditorCaption": ""
             },
             {
@@ -107,8 +94,7 @@
               "RelativeToolTip": "Public_Dashboard\\ContactDetails.cs",
               "ViewState": "AQIAAIcAAAAAAAAAAAAowBkAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T14:19:19.617Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-05T14:19:19.617Z"
             },
             {
               "$type": "Document",
@@ -120,47 +106,55 @@
               "RelativeToolTip": "Public_Dashboard\\About_Us_Dashboard.cs",
               "ViewState": "AQIAABEAAAAAAAAAAAAQwBIAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T09:39:05.162Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-27T09:39:05.162Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Login.cs",
               "DocumentMoniker": "C:\\Users\\MankgashaMaenetja\\source\\repos\\WOI_TestSuite\\WOI_Testsuite\\WorldOfImpact\\Admins_Login\\Login.cs",
               "RelativeDocumentMoniker": "Admins_Login\\Login.cs",
               "ToolTip": "C:\\Users\\MankgashaMaenetja\\source\\repos\\WOI_TestSuite\\WOI_Testsuite\\WorldOfImpact\\Admins_Login\\Login.cs",
               "RelativeToolTip": "Admins_Login\\Login.cs",
-              "ViewState": "AQIAAHgCAAAAAAAAAAAIwFIBAAAAAAAA",
+              "ViewState": "AQIAACwBAAAAAAAAAAAmwEUBAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-30T08:44:00.958Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-30T08:44:00.958Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "TestBase.cs",
               "DocumentMoniker": "C:\\Users\\MankgashaMaenetja\\source\\repos\\WOI_TestSuite\\WOI_Testsuite\\WorldOfImpact\\TestBase.cs",
               "RelativeDocumentMoniker": "TestBase.cs",
               "ToolTip": "C:\\Users\\MankgashaMaenetja\\source\\repos\\WOI_TestSuite\\WOI_Testsuite\\WorldOfImpact\\TestBase.cs",
               "RelativeToolTip": "TestBase.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAdAAAA",
+              "ViewState": "AQIAAD8AAAAAAAAAAAAAwFEAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-06T08:59:23.426Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-06T08:59:23.426Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
+              "Title": "Crime_Dashboard_Testcases.cs",
+              "DocumentMoniker": "C:\\Users\\MankgashaMaenetja\\source\\repos\\WOI_TestSuite\\WOI_Testsuite\\WorldOfImpact\\Crime_Public_Dashboard\\Crime_Dashboard_Testcases.cs",
+              "RelativeDocumentMoniker": "Crime_Public_Dashboard\\Crime_Dashboard_Testcases.cs",
+              "ToolTip": "C:\\Users\\MankgashaMaenetja\\source\\repos\\WOI_TestSuite\\WOI_Testsuite\\WorldOfImpact\\Crime_Public_Dashboard\\Crime_Dashboard_Testcases.cs",
+              "RelativeToolTip": "Crime_Public_Dashboard\\Crime_Dashboard_Testcases.cs",
+              "ViewState": "AQIAAKIAAAAAAAAAAAAowMAAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-22T12:26:11.774Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "BBAdminDashboard.cs",
               "DocumentMoniker": "C:\\Users\\MankgashaMaenetja\\source\\repos\\WOI_TestSuite\\WOI_Testsuite\\WorldOfImpact\\BB_Admin_Dashboard\\BBAdminDashboard.cs",
               "RelativeDocumentMoniker": "BB_Admin_Dashboard\\BBAdminDashboard.cs",
               "ToolTip": "C:\\Users\\MankgashaMaenetja\\source\\repos\\WOI_TestSuite\\WOI_Testsuite\\WorldOfImpact\\BB_Admin_Dashboard\\BBAdminDashboard.cs",
               "RelativeToolTip": "BB_Admin_Dashboard\\BBAdminDashboard.cs",
-              "ViewState": "AQIAAIMAAAAAAAAAAAAwwFsBAAAQAAAA",
+              "ViewState": "AQIAAH4AAAAAAAAAAAAowI4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-03T07:11:09.474Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-03T07:11:09.474Z"
             },
             {
               "$type": "Document",

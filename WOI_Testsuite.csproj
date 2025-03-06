@@ -38,8 +38,8 @@
 
   <ItemGroup>
     <Folder Include="HC_Public Dashboard\" />
+    <Folder Include="NewFolder\" />
     <Folder Include="Organisation_Admin_Dashboard\" />
-    <Folder Include="WOI_Admin_Dashboard\" />
   </ItemGroup>
 
 </Project>
