@@ -25,7 +25,7 @@ namespace WOI_Testsuite
             _chromeOptions.AddArguments("--ignore-certificate-errors");
             _driver = new ChromeDriver("C:/Users/MankgashaMaenetja/source/repos/WOI_TestSuite/WOI_Testsuite/WorldOfImpact/bin/Debug/Drivers");
 
-            _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(5000));
+            _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(5));
             _driver.Url = "https://woi-sit.azurewebsites.net/";
             _driver.Manage().Window.Maximize();
         }
@@ -83,7 +83,7 @@ namespace WOI_Testsuite
             if (_driver != null)
             {
                 _driver.Quit();
-                //_driver.Dispose();
+                _driver.Dispose();
                 _driver = null; // Clear reference to prevent reuse
             }
             }

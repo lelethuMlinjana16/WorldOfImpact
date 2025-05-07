@@ -22,7 +22,7 @@ namespace WOI_Testsuite.Crime_Public_Dashboard
         public void StartBrowser()
         {
             _driver = base.SiteConnection();
-            _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(1000));
+            _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(10));
             _driver.Url = "https://woi-sit.azurewebsites.net/";
             _driver.Manage().Window.Maximize();
         }
@@ -33,6 +33,7 @@ namespace WOI_Testsuite.Crime_Public_Dashboard
         [Test, Order(1)]
         public void Test_SelectCrimeChartViewDashboard()
         {
+
 
 
             // Wait for the overlay to disappear if present
@@ -49,49 +50,56 @@ namespace WOI_Testsuite.Crime_Public_Dashboard
 
             // The Chart View
 
-            // Click on the first element in the dashboard using JavaScript click as a fallback
+            //            IWebElement firstElementToClick1 = _wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(
+            //"#root > div.public-container > div > div > div > div.component-nav-item.gbvf-indicators.default"
+            //            )));
 
-            IWebElement firstElementToClick = _wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("#root > div.public-container > div > div > div > div.component-nav-item.gbvf-indicators.default")));
+
+            //            try
+            //            {
+            //                firstElementToClick1.Click();
+            //            }
+            //            catch (ElementClickInterceptedException)
+            //            {
+            //                ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", firstElementToClick1);
+            //            }
+
+            //            Thread.Sleep(2000); // Delay for 2 seconds
+
+
+            IWebElement firstElementToClick5 = _wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector(
+"#root > div.public-container > div > div > div > div.component-nav-item.gbvf-indicators.default"
+)));
+
 
             try
             {
-                firstElementToClick.Click();
+                firstElementToClick5.Click();
             }
             catch (ElementClickInterceptedException)
             {
-                ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", firstElementToClick);
-            }
-
-            Thread.Sleep(2000); // Delay for 2 seconds
-            // Click on the desired input element 
-            IWebElement inputElementToClick = _wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("#root > div.public-container > div > div > div > div.component-nav-item.gbvf-indicators.active > ul > li:nth-child(4) > label > input[type=checkbox]")));
-            try
-            {
-                inputElementToClick.Click();
-            }
-            catch (ElementClickInterceptedException)
-            {
-                ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", inputElementToClick);
-            }
-
-            Thread.Sleep(2000); // Delay for 2 seconds
-
-         
-
-            // Locate and click the specific element
-            IWebElement specificLabel = _wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("#root > div.public-container > div > div > div > div.component-nav-item.gbvf-indicators.active > ul > li:nth-child(5) > label > input[type=checkbox]")));
-            try
-            {
-                specificLabel.Click();
-            }
-            catch (ElementClickInterceptedException)
-            {
-                ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", specificLabel);
+                ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", firstElementToClick5);
             }
 
             Thread.Sleep(2000); // Delay for 2 seconds
 
-            
+
+
+
+            //// Locate and click the specific element
+            //IWebElement specificLabel = _wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("#root > div.public-container > div > div > div > div.component-nav-item.gbvf-indicators.active > ul > li:nth-child(5) > label > input[type=checkbox]")));
+            //try
+            //{
+            //    specificLabel.Click();
+            //}
+            //catch (ElementClickInterceptedException)
+            //{
+            //    ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", specificLabel);
+            //}
+
+            //Thread.Sleep(5); // Delay for 2 seconds
+
+
             // Navigate to the desired element (Dropdown Button)
             IWebElement specificElementToClick5 = _wait.Until(ExpectedConditions.ElementToBeClickable(By.CssSelector("#root > div.public-container > header > div.desktop-filter > div > nav > ul > li:nth-child(2) > div > button > div")));
             try
@@ -102,7 +110,7 @@ namespace WOI_Testsuite.Crime_Public_Dashboard
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", specificElementToClick5);
             }
-            Thread.Sleep(2000); // Delay for 2 seconds
+            Thread.Sleep(5); // Delay for 2 seconds
 
 
             // Select the "Northern Cape" option from the dropdown
@@ -116,7 +124,7 @@ namespace WOI_Testsuite.Crime_Public_Dashboard
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", freeStateOption);
             }
-            Thread.Sleep(2000); // Delay for 2 seconds
+            Thread.Sleep(2); // Delay for 2 seconds
            
 
             // Navigate to the desired element (Dropdown Button for the second dropdown)
@@ -129,7 +137,7 @@ namespace WOI_Testsuite.Crime_Public_Dashboard
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", secondDropdownToClick);
             }
-            Thread.Sleep(2000); // Delay for 2 seconds
+            Thread.Sleep(2); // Delay for 2 seconds
                                 // Wait for the dropdown to be visible
            
 
@@ -143,7 +151,7 @@ namespace WOI_Testsuite.Crime_Public_Dashboard
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", secondDropdownOption);
             }
-            Thread.Sleep(2000); // Delay for 2 seconds
+            Thread.Sleep(2); // Delay for 2 seconds
            
 
             // Navigate to the desired element (Dropdown Button for the third dropdown)
@@ -156,7 +164,7 @@ namespace WOI_Testsuite.Crime_Public_Dashboard
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", thirdDropdownToClick);
             }
-            Thread.Sleep(2000); // Delay for 2 seconds
+            Thread.Sleep(2); // Delay for 2 seconds
                                
            
 
@@ -296,7 +304,7 @@ namespace WOI_Testsuite.Crime_Public_Dashboard
                 Console.WriteLine("Overlay did not disappear within the wait time.");
             }
 
-            Thread.Sleep(2000); // Delay for 2 seconds
+            Thread.Sleep(2); // Delay for 2 seconds
 
             // The Chart View
 

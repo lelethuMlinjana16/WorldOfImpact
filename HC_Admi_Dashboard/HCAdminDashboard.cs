@@ -57,11 +57,29 @@ namespace WOI_Testsuite.HC_Admi_Dashboard
                 // Add delay to observe (optional)
                 System.Threading.Thread.Sleep(3000);
             }
-            catch (WebDriverTimeoutException)
+            catch (ElementClickInterceptedException)
             {
-                Console.WriteLine("Overlay did not disappear within the wait time.");
+                ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", targetElement);
             }
+            Thread.Sleep(2000); // Delay for 2 seconds
 
+
+
+
+            IWebElement targetElement1 = _driver.FindElement(By.CssSelector("#root > div.auth-container > div > div.auth-center > div.footer > div:nth-child(1)"));
+            try
+            {
+                // Click the element
+                targetElement1.Click();
+
+                // Add delay to observe (optional)
+                System.Threading.Thread.Sleep(3000);
+            }
+            catch (ElementClickInterceptedException)
+            {
+                ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", targetElement1);
+            }
+            Thread.Sleep(2000); // Delay for 2 seconds
 
 
             try
@@ -80,9 +98,6 @@ namespace WOI_Testsuite.HC_Admi_Dashboard
                 IWebElement loginButton = _driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[4]/div[1]/button"));
                 loginButton.Click();
 
-                //// Wait for the dashboard/homepage to load
-                //_wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(".dashboard")));
-
                 Console.WriteLine("Login Successful!");
 
             }
@@ -91,158 +106,19 @@ namespace WOI_Testsuite.HC_Admi_Dashboard
                 Console.WriteLine("Overlay did not disappear within the wait time.");
             }
 
-            //Copy the survey link
-            IWebElement targetElement19 = _wait.Until(d => d.FindElement(By.CssSelector("#copy-survey")));
-
             try
             {
-                // Click the element
-                targetElement19.Click();
+                //Copy the survey link
+                IWebElement copyButton = _wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.Id("copy-survey")));
 
-                // Add delay to observe (optional)
-                System.Threading.Thread.Sleep(3000);
+                // Click the button
+                copyButton.Click();
             }
-            catch (WebDriverTimeoutException)
+              catch (WebDriverTimeoutException)
             {
                 Console.WriteLine("Overlay did not disappear within the wait time.");
             }
-
-            //Send the survey link via email
-
-
-            //IWebElement targetElement18 = _wait.Until(d => d.FindElement(By.CssSelector("#send-survey")));
-
-            //try
-            //{
-            //    // Click the element
-            //    targetElement18.Click();
-
-            //    // Add delay to observe (optional)
-            //    System.Threading.Thread.Sleep(3000);
-            //}
-            //catch (WebDriverTimeoutException)
-            //{
-            //    Console.WriteLine("Overlay did not disappear within the wait time.");
-            //}
-
-
-            //Click the preview survey questions
-
-            //IWebElement targetElement17 = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.authenticated-layout > div > div > div.container > div.dashboard-contained-graphs > div.participation-items > div.partic-heading > a > h2")));
-
-            //try
-            //{
-            //    // Click the element
-            //    targetElement17.Click();
-
-            //    // Add delay to observe (optional)
-            //    System.Threading.Thread.Sleep(3000);
-            //}
-            //catch (WebDriverTimeoutException)
-            //{
-            //    Console.WriteLine("Overlay did not disappear within the wait time.");
-            //}
-
-            ////Click next button
-
-            ////IWebElement targetElement16 = _wait.Until(d => d.FindElement(By.CssSelector("#nextButton")));
-            //IWebElement targetElement16 = _wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("/html/body/main/div[2]/form/div[5]/div/button[2]")));
-            //try
-            //{
-            //    // Click the element
-            //    targetElement16.Click();
-
-            //    // Add delay to observe (optional)
-            //    System.Threading.Thread.Sleep(3000);
-            //}
-            //catch (WebDriverTimeoutException)
-            //{
-            //    Console.WriteLine("Overlay did not disappear within the wait time.");
-            //}
-
-            ////Click next button
-
-
-            //IWebElement targetElement15 = _wait.Until(d => d.FindElement(By.CssSelector("#nextButton")));
-
-            //try
-            //{
-            //    // Click the element
-            //    targetElement15.Click();
-
-            //    // Add delay to observe (optional)
-            //    System.Threading.Thread.Sleep(3000);
-            //}
-            //catch (WebDriverTimeoutException)
-            //{
-            //    Console.WriteLine("Overlay did not disappear within the wait time.");
-            //}
-
-
-            ////Click next button
-
-
-            //IWebElement targetElement14 = _wait.Until(d => d.FindElement(By.CssSelector("#nextButton")));
-
-            //try
-            //{
-            //    // Click the element
-            //    targetElement14.Click();
-
-            //    // Add delay to observe (optional)
-            //    System.Threading.Thread.Sleep(3000);
-            //}
-            //catch (WebDriverTimeoutException)
-            //{
-            //    Console.WriteLine("Overlay did not disappear within the wait time.");
-            //}
-
-            ////Click back button
-            //IWebElement targetElement13 = _wait.Until(d => d.FindElement(By.CssSelector("#prevButton")));
-
-            //try
-            //{
-            //    // Click the element
-            //    targetElement13.Click();
-
-            //    // Add delay to observe (optional)
-            //    System.Threading.Thread.Sleep(3000);
-            //}
-            //catch (WebDriverTimeoutException)
-            //{
-            //    Console.WriteLine("Overlay did not disappear within the wait time.");
-            //}
-
-            //select the Preview back button
-            //IWebElement anchorElement = _wait.Until(d => d.FindElement(By.XPath("/html/body/main/div[1]/div[1]/div/a")));
-
-            //// Click the anchor element
-            //try
-            //{
-            //    anchorElement.Click();
-            //}
-            //catch (ElementClickInterceptedException)
-            //{
-            //    // Use JavaScript executor as a fallback click
-            //    ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", anchorElement);
-            //}
-
-            //Go back to the Admin landing page
-
-            IWebElement targetElement27 = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.authenticated-layout > header > div.header-top > div > a")));
-
-            try
-            {
-                // Click the element
-                targetElement27.Click();
-
-                // Add delay to observe (optional)
-                System.Threading.Thread.Sleep(3000);
-            }
-            catch (WebDriverTimeoutException)
-            {
-                Console.WriteLine("Overlay did not disappear within the wait time.");
-            }
+         
 
             //View survey results
 
@@ -279,7 +155,7 @@ namespace WOI_Testsuite.HC_Admi_Dashboard
 
 
             // Navigate to the selection of student (Dropdown Button)
-            IWebElement specificElementToClick1 = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("#root > div.authenticated-layout > div > div > div.header > div.view-button > div > div > button")));
+            IWebElement specificElementToClick1 = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("/html/body/div[1]/div[2]/div/div/div[2]/div[2]/div[1]/div/div/button")));
             try
             {
                 specificElementToClick1.Click();
@@ -294,7 +170,7 @@ namespace WOI_Testsuite.HC_Admi_Dashboard
 
             // Select the "students" option from the dropdown
 
-            IWebElement firstListItem = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.authenticated-layout > div > div > div.header > div.view-button > div > div > ul > li:nth-child(1)")));
+            IWebElement firstListItem = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.authenticated-layout > div > div > div.container > div.survey-graphs > div.view-button > div > div > ul > li:nth-child(1)")));
 
             // Click the list item
             try
@@ -309,30 +185,30 @@ namespace WOI_Testsuite.HC_Admi_Dashboard
 
 
 
-            //// Navigate to the desired profile (Dropdown Button)
-            //IWebElement specificElementToClick = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//*[@id=\"root\"]/div[2]/header/div[2]/nav[1]/ul/li[2]/div/button/h3/span")));
-            //try
-            //{
-            //    specificElementToClick.Click();
-            //}
-            //catch (ElementClickInterceptedException)
-            //{
-            //    ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", specificElementToClick);
-            //}
-            //Thread.Sleep(2000); // Delay for 2 seconds
+            // Navigate to the desired profile (Dropdown Button)
+            IWebElement specificElementToClick = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//*[@id=\"root\"]/div[2]/header/div[2]/nav[1]/ul/li[2]/div/button/h3/span")));
+            try
+            {
+                specificElementToClick.Click();
+            }
+            catch (ElementClickInterceptedException)
+            {
+                ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", specificElementToClick);
+            }
+            Thread.Sleep(2000); // Delay for 2 seconds
 
 
 
-            //// Select the "logout" option from the dropdown
-            //IWebElement logoutOption = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//li[text()='Logout']")));
-            //try
-            //{
-            //    logoutOption.Click();
-            //}
-            //catch (ElementClickInterceptedException)
-            //{
-            //    ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", logoutOption);
-            //}
+            // Select the "logout" option from the dropdown
+            IWebElement logoutOption = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//li[text()='Logout']")));
+            try
+            {
+                logoutOption.Click();
+            }
+            catch (ElementClickInterceptedException)
+            {
+                ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", logoutOption);
+            }
 
 
 

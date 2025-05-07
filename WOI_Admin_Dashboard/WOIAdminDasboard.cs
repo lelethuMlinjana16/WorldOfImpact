@@ -23,7 +23,7 @@ namespace WOI_Testsuite.WOI_Admin_Dashboard
         {
             _driver = base.SiteConnection();
             _wait = new WebDriverWait(_driver, TimeSpan.FromSeconds(1000));
-            _driver.Url = "https://woi-sit.azurewebsites.net/";
+            _driver.Url = "https://woi-prod.azurewebsites.net/";
             _driver.Manage().Window.Maximize();
         }
 
@@ -41,7 +41,7 @@ namespace WOI_Testsuite.WOI_Admin_Dashboard
                 Console.WriteLine("Overlay did not disappear within the wait time.");
             }
 
-            Thread.Sleep(2000); // Delay for 2 seconds
+            Thread.Sleep(2000); 
 
             IWebElement targetElement = _driver.FindElement(By.CssSelector("#root > div.public-container > header > div.header-top > nav.desktop > ul > li:nth-child(4) > a"));
             try
@@ -56,7 +56,23 @@ namespace WOI_Testsuite.WOI_Admin_Dashboard
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", targetElement);
             }
-            Thread.Sleep(2000); // Delay for 2 seconds
+            Thread.Sleep(2000); 
+
+
+            IWebElement targetElement1 = _driver.FindElement(By.CssSelector("#root > div.auth-container > div > div.auth-center > div.footer > div:nth-child(1)"));
+            try
+            {
+                // Click the element
+                targetElement1.Click();
+
+                // Add delay to observe (optional)
+                System.Threading.Thread.Sleep(3000);
+            }
+            catch (ElementClickInterceptedException)
+            {
+                ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", targetElement1);
+            }
+            Thread.Sleep(2000); 
 
 
             try
@@ -96,39 +112,9 @@ namespace WOI_Testsuite.WOI_Admin_Dashboard
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", viewAll);
             }
-            Thread.Sleep(2000); // Delay for 2 seconds
-
-
-            ////Select the View
-
-            //IWebElement view = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.authenticated-layout > div > div > div.organisation-content > div > div.table-body > div:nth-child(1) > div:nth-child(4) > div > div > div")));
-            //try
-            //{
-            //    view.Click();
-            //}
-            //catch (ElementClickInterceptedException)
-            //{
-            //    ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", view);
-            //}
-            //Thread.Sleep(2000); // Delay for 2 seconds
-
-
-            ////Select the Approve button
-
-            //IWebElement approveButton = _wait.Until(d => d.FindElement(By.CssSelector("#approve-button")));
-            //try
-            //{
-            //    approveButton.Click();
-            //}
-            //catch (ElementClickInterceptedException)
-            //{
-            //    ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", approveButton);
-            //}
-            //Thread.Sleep(2000); // Delay for 2 seconds
-
+            Thread.Sleep(2000); 
 
             //View all the applications
-
 
             IWebElement selectAll = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.authenticated-layout > div > div > div.organisation-container-search > div.component-filter-container > div.filter-component > div > button")));
             try
@@ -139,11 +125,9 @@ namespace WOI_Testsuite.WOI_Admin_Dashboard
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", selectAll);
             }
-            Thread.Sleep(2000); // Delay for 2 seconds
-
+            Thread.Sleep(2000); 
 
             //Select the All from the dropdown option
-
 
             IWebElement allOption = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.authenticated-layout > div > div > div.organisation-container-search > div.component-filter-container > div.filter-component > div > ul > li:nth-child(1)")));
             try
@@ -154,8 +138,7 @@ namespace WOI_Testsuite.WOI_Admin_Dashboard
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", allOption);
             }
-            Thread.Sleep(2000); // Delay for 2 seconds
-
+            Thread.Sleep(2000); 
 
             //return to the admin landing page
 
@@ -168,8 +151,7 @@ namespace WOI_Testsuite.WOI_Admin_Dashboard
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", landingpage);
             }
-            Thread.Sleep(2000); // Delay for 2 seconds
-
+            Thread.Sleep(2000); 
 
             //click the manage
 
@@ -182,34 +164,7 @@ namespace WOI_Testsuite.WOI_Admin_Dashboard
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", managepage);
             }
-            Thread.Sleep(2000); // Delay for 2 seconds
-
-            //click the preview
-
-            IWebElement previewLink = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.authenticated-layout > div > div > div.questionnaire-body > div:nth-child(2) > div:nth-child(1) > div.survey-header > div.quest-header-left > a")));
-            try
-            {
-                previewLink.Click();
-            }
-            catch (ElementClickInterceptedException)
-            {
-                ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", previewLink);
-            }
-            Thread.Sleep(2000); // Delay for 2 seconds
-
-
-            //Click the View previous questionnaires
-
-            IWebElement previewQ = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.authenticated-layout > div > div > div.questionnaire-body > div:nth-child(2) > div.previous-view > strong")));
-            try
-            {
-                previewQ.Click();
-            }
-            catch (ElementClickInterceptedException)
-            {
-                ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", previewQ);
-            }
-            Thread.Sleep(2000); // Delay for 2 seconds
+            Thread.Sleep(2000); 
 
             //return to landing page
 
@@ -222,7 +177,7 @@ namespace WOI_Testsuite.WOI_Admin_Dashboard
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", returnL);
             }
-            Thread.Sleep(2000); // Delay for 2 seconds
+            Thread.Sleep(2000); 
 
             //Go to the profile
 
@@ -235,10 +190,9 @@ namespace WOI_Testsuite.WOI_Admin_Dashboard
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", profileWOI);
             }
-            Thread.Sleep(2000); // Delay for 2 seconds
+            Thread.Sleep(2000); 
 
             //Select the Manage Users and Groups
-
 
             IWebElement manageUsersandGroups = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.authenticated-layout > header > div.header-top > nav.desktop > ul > li:nth-child(2) > div > ul > li:nth-child(3)")));
             try
@@ -249,11 +203,9 @@ namespace WOI_Testsuite.WOI_Admin_Dashboard
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", manageUsersandGroups);
             }
-            Thread.Sleep(2000); // Delay for 2 seconds
-
+            Thread.Sleep(2000); 
 
             //Filter by users
-
 
             IWebElement filterUsers = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.authenticated-layout > div > div > div.manage-usergroup-container-search > div.component-filter-container > div.filter-component > div > button")));
             try
@@ -264,11 +216,9 @@ namespace WOI_Testsuite.WOI_Admin_Dashboard
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", filterUsers);
             }
-            Thread.Sleep(2000); // Delay for 2 seconds
-
+            Thread.Sleep(2000); 
 
             //Select user
-
 
             IWebElement selectUser = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.authenticated-layout > div > div > div.manage-usergroup-container-search > div.component-filter-container > div.filter-component > div > ul > li:nth-child(1)")));
             try
@@ -279,7 +229,7 @@ namespace WOI_Testsuite.WOI_Admin_Dashboard
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", selectUser);
             }
-            Thread.Sleep(2000); // Delay for 2 seconds
+            Thread.Sleep(2000); 
 
             //Select manage
 
@@ -292,8 +242,7 @@ namespace WOI_Testsuite.WOI_Admin_Dashboard
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", selectManage);
             }
-            Thread.Sleep(2000); // Delay for 2 seconds
-
+            Thread.Sleep(2000); 
 
             //Select Cancel
 
@@ -306,11 +255,9 @@ namespace WOI_Testsuite.WOI_Admin_Dashboard
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", cancelButton);
             }
-            Thread.Sleep(2000); // Delay for 2 seconds
-
+            Thread.Sleep(2000); 
 
             //Go back to landing page
-
 
             IWebElement backToLanding = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.authenticated-layout > div > div > div.manage-usergroup-container-search > div.container-header > div.prefix > h1")));
             try
@@ -321,7 +268,7 @@ namespace WOI_Testsuite.WOI_Admin_Dashboard
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", backToLanding);
             }
-            Thread.Sleep(2000); // Delay for 2 seconds
+            Thread.Sleep(2000); 
 
             //Go to the profile
 
@@ -334,10 +281,9 @@ namespace WOI_Testsuite.WOI_Admin_Dashboard
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", profile);
             }
-            Thread.Sleep(2000); // Delay for 2 seconds
+            Thread.Sleep(2000); 
 
             //Select the Logout
-
 
             IWebElement logOut = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.authenticated-layout > header > div.header-top > nav.desktop > ul > li:nth-child(2) > div > ul > li:nth-child(4)")));
             try
@@ -348,7 +294,7 @@ namespace WOI_Testsuite.WOI_Admin_Dashboard
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", logOut);
             }
-            Thread.Sleep(2000); // Delay for 2 seconds
+            Thread.Sleep(2000); 
         }
     }
 }

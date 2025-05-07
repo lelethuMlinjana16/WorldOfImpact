@@ -103,12 +103,6 @@ C:\Users\MankgashaMaenetja\source\repos\WOI_TestSuite\WOI_Testsuite\obj\Debug\ne
 C:\Users\MankgashaMaenetja\source\repos\WOI_TestSuite\WOI_Testsuite\obj\Debug\net8.0\WOI_Testsuite.genruntimeconfig.cache
 C:\Users\MankgashaMaenetja\source\repos\WOI_TestSuite\WOI_Testsuite\obj\Debug\net8.0\ref\WOI_Testsuite.dll
 C:\Users\MankgashaMaenetja\source\repos\WOI_TestSuite\WOI_Testsuite\bin\Debug\net8.0\SeleniumExtras.WaitHelpers.dll
-C:\Users\MankgashaMaenetja\source\repos\WOI_TestSuite\WOI_Testsuite\WorldOfImpact\obj\Debug\net8.0\WOI_Testsuite.csproj.AssemblyReference.cache
-C:\Users\MankgashaMaenetja\source\repos\WOI_TestSuite\WOI_Testsuite\WorldOfImpact\obj\Debug\net8.0\WOI_Testsuite.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\MankgashaMaenetja\source\repos\WOI_TestSuite\WOI_Testsuite\WorldOfImpact\obj\Debug\net8.0\WOI_Testsuite.AssemblyInfoInputs.cache
-C:\Users\MankgashaMaenetja\source\repos\WOI_TestSuite\WOI_Testsuite\WorldOfImpact\obj\Debug\net8.0\WOI_Testsuite.AssemblyInfo.cs
-C:\Users\MankgashaMaenetja\source\repos\WOI_TestSuite\WOI_Testsuite\WorldOfImpact\obj\Debug\net8.0\WOI_Testsuite.csproj.CoreCompileInputs.cache
-C:\Users\MankgashaMaenetja\source\repos\WOI_TestSuite\WOI_Testsuite\WorldOfImpact\obj\Debug\net8.0\WOI_Testsuite.sourcelink.json
 C:\Users\MankgashaMaenetja\source\repos\WOI_TestSuite\WOI_Testsuite\WorldOfImpact\bin\Debug\net8.0\testhost.dll
 C:\Users\MankgashaMaenetja\source\repos\WOI_TestSuite\WOI_Testsuite\WorldOfImpact\bin\Debug\net8.0\testhost.exe
 C:\Users\MankgashaMaenetja\source\repos\WOI_TestSuite\WOI_Testsuite\WorldOfImpact\bin\Debug\net8.0\selenium-manager\linux\selenium-manager
@@ -238,6 +232,12 @@ C:\Users\MankgashaMaenetja\source\repos\WOI_TestSuite\WOI_Testsuite\WorldOfImpac
 C:\Users\MankgashaMaenetja\source\repos\WOI_TestSuite\WOI_Testsuite\WorldOfImpact\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
 C:\Users\MankgashaMaenetja\source\repos\WOI_TestSuite\WOI_Testsuite\WorldOfImpact\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Diagnostics.PerformanceCounter.dll
 C:\Users\MankgashaMaenetja\source\repos\WOI_TestSuite\WOI_Testsuite\WorldOfImpact\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\MankgashaMaenetja\source\repos\WOI_TestSuite\WOI_Testsuite\WorldOfImpact\obj\Debug\net8.0\WOI_Testsuite.csproj.AssemblyReference.cache
+C:\Users\MankgashaMaenetja\source\repos\WOI_TestSuite\WOI_Testsuite\WorldOfImpact\obj\Debug\net8.0\WOI_Testsuite.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MankgashaMaenetja\source\repos\WOI_TestSuite\WOI_Testsuite\WorldOfImpact\obj\Debug\net8.0\WOI_Testsuite.AssemblyInfoInputs.cache
+C:\Users\MankgashaMaenetja\source\repos\WOI_TestSuite\WOI_Testsuite\WorldOfImpact\obj\Debug\net8.0\WOI_Testsuite.AssemblyInfo.cs
+C:\Users\MankgashaMaenetja\source\repos\WOI_TestSuite\WOI_Testsuite\WorldOfImpact\obj\Debug\net8.0\WOI_Testsuite.csproj.CoreCompileInputs.cache
+C:\Users\MankgashaMaenetja\source\repos\WOI_TestSuite\WOI_Testsuite\WorldOfImpact\obj\Debug\net8.0\WOI_Testsuite.sourcelink.json
 C:\Users\MankgashaMaenetja\source\repos\WOI_TestSuite\WOI_Testsuite\WorldOfImpact\obj\Debug\net8.0\WOI_Test.730158C6.Up2Date
 C:\Users\MankgashaMaenetja\source\repos\WOI_TestSuite\WOI_Testsuite\WorldOfImpact\obj\Debug\net8.0\WOI_Testsuite.dll
 C:\Users\MankgashaMaenetja\source\repos\WOI_TestSuite\WOI_Testsuite\WorldOfImpact\obj\Debug\net8.0\refint\WOI_Testsuite.dll

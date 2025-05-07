@@ -35,7 +35,7 @@ namespace WOI_Testsuite.BB_Admin_Dashboard
         public void BB()
         {
 
-            // Wait for the overlay to disappear if present
+           
             try
             {
                 _wait.Until(ExpectedConditions.InvisibilityOfElementLocated(By.ClassName("overlay")));
@@ -45,40 +45,52 @@ namespace WOI_Testsuite.BB_Admin_Dashboard
                 Console.WriteLine("Overlay did not disappear within the wait time.");
             }
 
-            Thread.Sleep(2000); // Delay for 2 seconds
+            Thread.Sleep(2000); 
 
             IWebElement targetElement = _driver.FindElement(By.CssSelector("#root > div.public-container > header > div.header-top > nav.desktop > ul > li:nth-child(4) > a"));
             try
             {
-                // Click the element
+                
                 targetElement.Click();
 
-                // Add delay to observe (optional)
+                
                 System.Threading.Thread.Sleep(3000);
             }
             catch (ElementClickInterceptedException)
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", targetElement);
             }
-            Thread.Sleep(2000); // Delay for 2 seconds
+            Thread.Sleep(2000); 
 
+
+            IWebElement targetElement1 = _driver.FindElement(By.CssSelector("#root > div.auth-container > div > div.auth-center > div.footer > div:nth-child(1)"));
+            try
+            {
+               
+                targetElement1.Click();
+
+                
+                System.Threading.Thread.Sleep(3000);
+            }
+            catch (ElementClickInterceptedException)
+            {
+                ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", targetElement1);
+            }
+            Thread.Sleep(2000); 
 
             try
             {
 
 
-                // Find and fill the username field
                 IWebElement usernameField = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.auth-container > div > div:nth-child(3) > div:nth-child(1) > div > input")));
                 usernameField.SendKeys("siyasanga.Nkungwana@ecotp.gov.za");
 
-                // Find and fill the password field
+                
                 IWebElement passwordField = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.auth-container > div > div:nth-child(3) > div:nth-child(2) > div > input")));
                 passwordField.SendKeys("Password@123456789");
 
-                // Click the login button
                 IWebElement loginButton = _driver.FindElement(By.XPath("/html/body/div/div[2]/div/div[4]/div[1]/button"));
                 loginButton.Click();
-
 
                 Console.WriteLine("Login Successful!");
 
@@ -89,7 +101,7 @@ namespace WOI_Testsuite.BB_Admin_Dashboard
             }
 
 
-            // Navigate to the desired element (Dropdown Button)
+          
             IWebElement specificElementToClick = _wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//*[@id=\"root\"]/div[2]/header/div[2]/nav[1]/ul/li[2]/div/button/h3/span")));
             try
             {
@@ -99,11 +111,10 @@ namespace WOI_Testsuite.BB_Admin_Dashboard
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", specificElementToClick);
             }
-            Thread.Sleep(2000); // Delay for 2 seconds
+            Thread.Sleep(2000); 
 
 
-
-            // Select the dropdown button on Profile
+          
             IWebElement specificElementToClick1 = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.authenticated-layout > header > div.header-top > nav.desktop > ul > li:nth-child(2) > div > button > svg:nth-child(3)")));
             try
             {
@@ -113,9 +124,9 @@ namespace WOI_Testsuite.BB_Admin_Dashboard
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", specificElementToClick1);
             }
-            Thread.Sleep(2000); // Delay for 2 seconds
+            Thread.Sleep(2000); 
 
-            // Select Police Station at Elundini Local Municipality
+            
             IWebElement specificElementToClick11 = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.authenticated-layout > div > div > div.building-block-content > div:nth-child(8) > div.buildinb-block-desktop > table > tbody > tr > td:nth-child(2) > div > div.resource-item-name > span.resource-label.undefined")));
             try
             {
@@ -125,9 +136,7 @@ namespace WOI_Testsuite.BB_Admin_Dashboard
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", specificElementToClick11);
             }
-            Thread.Sleep(2000); // Delay for 2 seconds
-
-            // Select dropdown to update the building block
+            Thread.Sleep(2000); 
             IWebElement specificElementToClick12 = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.authenticated-layout > div > div > div.manage-building-block-content > div.manage-block-card-holder-selection > div.manage-select-building-block > div > button")));
             try
             {
@@ -137,10 +146,7 @@ namespace WOI_Testsuite.BB_Admin_Dashboard
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", specificElementToClick12);
             }
-            Thread.Sleep(2000); // Delay for 2 seconds
-
-
-            // Select the "Katkop" option from the dropdown
+            Thread.Sleep(2000); 
 
             IWebElement katKopOption = _wait.Until(d => d.FindElement(By.CssSelector("#root > div.authenticated-layout > div > div > div.manage-building-block-content > div.manage-block-card-holder-selection > div.manage-select-building-block > div > ul > li:nth-child(2)")));
             try
@@ -151,9 +157,7 @@ namespace WOI_Testsuite.BB_Admin_Dashboard
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", katKopOption);
             }
-            Thread.Sleep(2000); // Delay for 2 seconds
-
-            //Select the Edit Button
+            Thread.Sleep(2000); 
 
             IWebElement EditButton = _wait.Until(d => d.FindElement(By.CssSelector("#edit-building-block")));
             try
@@ -164,9 +168,7 @@ namespace WOI_Testsuite.BB_Admin_Dashboard
             {
                 ((IJavaScriptExecutor)_driver).ExecuteScript("arguments[0].click();", EditButton);
             }
-            Thread.Sleep(2000); // Delay for 2 seconds
-
-            //Fill in the Physical address
+            Thread.Sleep(2000); 
 
 
 
@@ -174,17 +176,17 @@ namespace WOI_Testsuite.BB_Admin_Dashboard
             {
 
 
-                // Function to fill input field only if empty
+                
                 void FillFieldIfEmpty(By selector, string value)
                 {
                     IWebElement field = _wait.Until(d => d.FindElement(selector));
-                    if (string.IsNullOrWhiteSpace(field.GetAttribute("value"))) // Check if the field is empty
+                    if (string.IsNullOrWhiteSpace(field.GetAttribute("value"))) 
                     {
                         field.SendKeys(value);
                     }
                 }
 
-                // Fill fields only if they are empty
+                
                 FillFieldIfEmpty(By.CssSelector("#root > div.authenticated-layout > div > div > div.manage-building-block-content > div.manage-block-card-holder-selection > div.contact-details > div:nth-child(1) > div > input"), "10073 Elias Park");
                 FillFieldIfEmpty(By.CssSelector("#root > div.authenticated-layout > div > div > div.manage-building-block-content > div.manage-block-card-holder-selection > div.contact-details > div:nth-child(2) > div > input"), "10073 Elias Park, Eastern Cape");
                 FillFieldIfEmpty(By.CssSelector("#root > div.authenticated-layout > div > div > div.manage-building-block-content > div.manage-block-card-holder-selection > div.contact-details > div:nth-child(3) > div > input"), "0535639086");

@@ -68,6 +68,13 @@ namespace WOI_Testsuite.Public_Dashboard
             }
             Thread.Sleep(2000); // Delay for 2 seconds
 
+
+            // Get all open window handles
+            List<string> windowHandles = new List<string>(_driver.WindowHandles);
+
+            _driver.SwitchTo().Window(windowHandles[0]);
+            Console.WriteLine("Switched back to previous tab: " + _driver.Title);
+
         }
     }
 }
